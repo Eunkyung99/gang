@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>애플리케이션 성능 개선 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="애플리케이션 성능 개선" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 소스 코드 최적화" />
+<meta property="og:description" content="1. 소스 코드 최적화" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/06/27/theory117.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/06/27/theory117.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-27T08:19:12-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/06/27/theory117.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/06/27/theory117.html"},"headline":"애플리케이션 성능 개선","dateModified":"2021-06-27T08:19:12-05:00","datePublished":"2021-06-27T08:19:12-05:00","description":"1. 소스 코드 최적화","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">애플리케이션 성능 개선</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-27T08:19:12-05:00" itemprop="datePublished">
+        Jun 27, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-소스-코드-최적화">1. 소스 코드 최적화</h4>
+
+<ul>
+  <li>나쁜 코드를 배제하고 클린 코드로 작성하는 것</li>
+  <li>클린 코드: 누구나 쉽게 이해하고 수정 및 추가할 수 있는 단순, 명료한 코드. 즉 잘 작성된 코드</li>
+  <li>나쁜 코드: 프로그램의 로직이 복잡하고 이해하기 어려운 코드
+    <ul>
+      <li>대표적인 나쁜 코드
+        <ul>
+          <li>스파게티 코드: 코드의 로직이 서로 복잡하게 얽혀 있는 코드</li>
+          <li>외계인 코드: 아주 오래되거나 참고문서 또는 개발자가 없어 유지보수 작업이 어려운 코드</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>나쁜 코드로 작성된 애플리케이션의 코드를 클린 코드로 수정하면 애플리케이션의 성능이 개선됨</li>
+</ul>
+
+<h4 id="2-클린-코드-작성-원칙">2. 클린 코드 작성 원칙</h4>
+
+<ul>
+  <li><strong>가독성</strong>
+    <ul>
+      <li>누구든지 코드를 쉽게 읽을 수 있도록 작성</li>
+      <li>이해하기 쉬운 용어를 사용하거나 들여쓰기 기능 사용</li>
+    </ul>
+  </li>
+  <li><strong>단순성</strong>
+    <ul>
+      <li>코드를 간단하게 작성</li>
+      <li>한 번에 한 가지를 처리하도록 코드를 작성하고 클래스/메소드/함수 등을 최소 단위로 분리</li>
+    </ul>
+  </li>
+  <li><strong>의존성 배제</strong>
+    <ul>
+      <li>코드가 다른 모듈에 미치는 영향 최소화</li>
+      <li>코드 변경 시 다른 부분에 영향이 없도록 작성</li>
+    </ul>
+  </li>
+  <li><strong>중복성 최소화</strong>
+    <ul>
+      <li>코드의 중복 최소화</li>
+      <li>중복된 코드는 삭제하고 공통된 코드 사용</li>
+    </ul>
+  </li>
+  <li><strong>추상화</strong>
+    <ul>
+      <li>상위 클래스/메소드/함수에서는 간략하게 애플리케이션의 특성을 나타내고, 상세 내용은 하위 클래스/메소드/함수에서 구현</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="3-소스-코드-최적화-유형">3. 소스 코드 최적화 유형</h4>
+
+<ul>
+  <li><strong>클래스 분할 배치</strong>: 하나의 클래스는 하나의 역할만 수행하도록 응집도를 높이고 크기를 작게 작성함</li>
+  <li><strong>느슨한 결합</strong>: 인터페이스 클래스를 이용하여 추상화된 자료 구조와 메소드를 구현함으로써 클래스 간의 의존성을 최소화</li>
+</ul>
+
+<h4 id="4-소스-코드-품질-분석-도구">4. 소스 코드 품질 분석 도구</h4>
+
+<ul>
+  <li>소스 코드의 코딩 스타일, 코드에 설정된 코딩 표준, 코드의 복잡도, 코드에 존재하는 메모리 누수 현상, 스레드 결함 등을 발견하기 위해 사용하는 분석 도구</li>
+  <li>정적 분석 도구
+    <ul>
+      <li>작성한 소스 코드를 실행하지 않고 코딩 표준이나 코딩 스타일, 결함 등을 확인하는 코드 분석 도구</li>
+      <li>종류: pmd, cppcheck, SonarQube, checkstyle, ccm, cobertura 등</li>
+    </ul>
+  </li>
+  <li>동적 분석 도구
+    <ul>
+      <li>작성한 소스 코드를 실행하여 코드에 존재하는 메모리 누수, 스레드 결함 등을 분석하는 도구</li>
+      <li>종류: Avalanche, Valgrind 등</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="5-소스-코드-품질-분석-도구의-종류">5. 소스 코드 품질 분석 도구의 종류</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>도구</th>
+      <th>설명</th>
+      <th>지원 환경</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pmd</td>
+      <td>소스 코드에 대한 미사용 변수, 최적화되지 않은 코드 등 결함을 유발할 수 있는 코드 검사</td>
+      <td>Linux, Windows</td>
+    </tr>
+    <tr>
+      <td>cppcheck</td>
+      <td>C/C++ 코드에 대한 메모리 누수, 오버플로우 등 분석</td>
+      <td>Windows</td>
+    </tr>
+    <tr>
+      <td>SonarQube</td>
+      <td>중복 코드, 복잡도, 코딩 설계 등을 분석하는 소스 분석 통합 플랫폼</td>
+      <td>Cross-Platform</td>
+    </tr>
+    <tr>
+      <td>checkstyle</td>
+      <td>-자바 코드에 대해 소스 코드 표준을 따르고 있는지 검사<br />-다양한 개발 도구에 통합하여 사용 가능</td>
+      <td>Cross-Platform</td>
+    </tr>
+    <tr>
+      <td>ccm</td>
+      <td>다양한 언어의 코드 복잡도를 분석</td>
+      <td>Cross-Platform</td>
+    </tr>
+    <tr>
+      <td>cobertura</td>
+      <td>자바 언어의 소스 코드 복잡도 분석 및 테스트 커버리지를 측정</td>
+      <td>Cross-Platform</td>
+    </tr>
+    <tr>
+      <td>Avalanche</td>
+      <td>-Valgrind 프레임워크 및 STP 기반으로 구현<br />-프로그램에 대한 결함 및 취약점 등을 분석</td>
+      <td>Linux, Android</td>
+    </tr>
+    <tr>
+      <td>Valgrind</td>
+      <td>프로그램 내에 존재하는 메모리 및 쓰레드 결함 등을 분석</td>
+      <td>Cross-Platform</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/06/27/theory117.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

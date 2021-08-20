@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>SQL-DML | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="SQL-DML" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. DML(Data Manipulation Language, 데이터 조작어)" />
+<meta property="og:description" content="1. DML(Data Manipulation Language, 데이터 조작어)" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/06/30/theory120.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/06/30/theory120.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-30T08:48:12-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/06/30/theory120.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/06/30/theory120.html"},"headline":"SQL-DML","dateModified":"2021-06-30T08:48:12-05:00","datePublished":"2021-06-30T08:48:12-05:00","description":"1. DML(Data Manipulation Language, 데이터 조작어)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">SQL-DML</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-30T08:48:12-05:00" itemprop="datePublished">
+        Jun 30, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-dmldata-manipulation-language-데이터-조작어">1. DML(Data Manipulation Language, 데이터 조작어)</h4>
+
+<ul>
+  <li>데이터베이스 사용자가 저장된 데이터를 실질적으로 관리하는데 사용하는 언어</li>
+  <li>데이터베이스 사용자와 데이터베이스 관리 시스템 간의 인터페이스를 제공</li>
+  <li>유형
+    <ul>
+      <li>SELECT: 테이블에서 튜플을 검색</li>
+      <li>INSERT: 테이블에 새로운 튜플을 삽입</li>
+      <li>DELETE: 테이블에서 튜플을 삭제</li>
+      <li>UPDATE: 테이블에서 튜플의 내용을 갱신</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="2-삽입문insert-into-">2. 삽입문(INSERT INTO ~)</h4>
+
+<ul>
+  <li>기본 테이블에 새로운 튜플을 삽입할 때 사용</li>
+  <li>일반 형식</li>
+</ul>
+
+<blockquote>
+  <p>INSERT INTO 테이블명([속성명1, 속성명2, …])
+VALUES (데이터1, 데이터2, …);</p>
+</blockquote>
+
+<ul>
+  <li>대응하는 속성과 데이터는 개수와 데이터 유형이 일치해야 함</li>
+  <li>기본 테이블의 모든 속성을 사용할 때는 속성명을 생략할 수 있음</li>
+  <li>SELECT문을 사용하여 다른 테이블의 검색 결과를 삽입할 수 있음</li>
+</ul>
+
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gt3vcemrf9j30rc0h8tc2.jpg" alt="스크린샷 2021-08-03 오후 9.23.25" /></p>
+
+<ul>
+  <li>
+    <사원> 테이블에 (이름 -홍승현, 부서-인터넷)을 삽입하시오.
+</사원>
+  </li>
+  <li>INSERT INTO 사원(이름, 부서) VALUES(‘홍승현’, ‘인터넷’);</li>
+  <li>
+    <사원> 테이블에 (장보고, 기획, 05/03/73, 홍제동, 90)을 삽입하시오.
+</사원>
+  </li>
+  <li>INSERT INTO 사원 VALUES (‘장보고’, ‘기획’, #05/03/73#, ‘홍제동’, 90);</li>
+  <li>
+    <사원> 테이블에 있는 편집부의 모든 튜플을 편집부원(이름, 생일, 주소, 기본급) 테이블에 삽입하시오.
+</사원>
+  </li>
+  <li>INSERT INTO 편집부원(이름, 생일, 주소, 기본급)
+SELECT 이름, 생일, 주소, 기본급
+FROM 사원
+WHERE 부서=’편집’;</li>
+</ul>
+
+<h4 id="3-삭제문delete-from">3 삭제문(DELETE FROM~)</h4>
+
+<ul>
+  <li>기본 테이블에 있는 튜플들 중에서 특정 튜플(행)을 삭제할 때 사용</li>
+  <li>일반 형식</li>
+</ul>
+
+<blockquote>
+  <p>DELETE
+FROM 테이블명
+[WHERE 조건];</p>
+</blockquote>
+
+<ul>
+  <li>모든 레코드를 삭제할 때는 WHERE 절을 생략함</li>
+  <li>모든 레코드를 삭제하더라도 테이블 구조는 남아 있기 때문에 디스크에서 테이블을 완전히 제거하는 DROP과는 다름</li>
+  <li>
+    <사원> 테이블에서 "임꺽정"에 대한 튜플을 삭제하시오.
+</사원>
+  </li>
+  <li>DELETE
+FROM 사원
+WHERE 이름=’임꺽정’;</li>
+  <li>
+    <사원> 테이블에서 "인터넷" 부서에 대한 모든 튜플을 삭제하시오.
+</사원>
+  </li>
+  <li>DELETE
+FROM 사원
+WHERE 부서=’인터넷’;</li>
+  <li>
+    <사원> 테이블의 모든 레코드를 삭제하시오.
+</사원>
+  </li>
+  <li>DELETE
+FROM 사원;</li>
+</ul>
+
+<h4 id="4-갱신문update-set">4. 갱신문(UPDATE~ SET~)</h4>
+
+<ul>
+  <li>기본 테이블에 있는 튜플들 중에서 특정 튜플의 내용을 변경할 때 사용</li>
+  <li>일반 형식</li>
+</ul>
+
+<blockquote>
+  <p>UPDATE 테이블명
+SET 속성명 = 데이터[, 속성명=데이터, …]
+[WHERE 조건];</p>
+</blockquote>
+
+<ul>
+  <li>
+    <사원> 테이블에서 "홍길동"의 '주소'를 "수색동"으로 수정하시오.
+</사원>
+  </li>
+  <li>UPDATE 사원
+SET 주소=’수색동’
+WHERE 이름=’홍길동’;</li>
+  <li>
+    <사원> 테이블에서 "황진이"의 '부서'를 "기획부"로 변경하고 '기본급'을 5만원 인상시키시오.
+</사원>
+  </li>
+  <li>UPDATE 사원
+SET 부서=’기획’, 기본급=기본급+5
+WHERE 이름=’황진이’;</li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/06/30/theory120.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

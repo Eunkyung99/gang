@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>쿼리 성능 최적화 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="쿼리 성능 최적화" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 쿼리 성능 최적화" />
+<meta property="og:description" content="1. 쿼리 성능 최적화" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/07/12/theory132.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/07/12/theory132.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-12T10:18:22-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/07/12/theory132.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/07/12/theory132.html"},"headline":"쿼리 성능 최적화","dateModified":"2021-07-12T10:18:22-05:00","datePublished":"2021-07-12T10:18:22-05:00","description":"1. 쿼리 성능 최적화","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">쿼리 성능 최적화</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-07-12T10:18:22-05:00" itemprop="datePublished">
+        Jul 12, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-쿼리-성능-최적화">1. 쿼리 성능 최적화</h4>
+
+<ul>
+  <li>데이터 입.출력 애플리케이션의 성능 향상을 위해 SQL 코드를 최적화하는 것</li>
+  <li>쿼리 성능을 최적화하기 전에 성능 측정 도구인 APM을 사용하여 최적화할 쿼리를 선정해야 함</li>
+  <li>최적화 할 쿼리에 대해 옵티마이저가 수립한 실행 계획을 검토하고 SQL 코드와 인덱스를 재구성함</li>
+</ul>
+
+<h4 id="2-옵티마이저">2. 옵티마이저</h4>
+
+<ul>
+  <li>
+    <p>작성된 SQL이 가장 효율적으로 수행되도록 최적의 경로를 찾아 주는 모듈</p>
+  </li>
+  <li>
+    <p>RBO(Rule Based Optimizer)와 CBO(Cost Based Optimizer) 두 종류가 있음</p>
+  </li>
+  <li>
+    <p>RBO는 데이터베이스 관리자(DBA)가 사전에 정의해둔 규칙에 의거하여 경로를 찾는 규칙 기반 옵티마이저임</p>
+  </li>
+  <li>
+    <p>CBO는 입.출력 속도, CPU 사용량, 블록 개수, 개체의 속성, 튜플 개수 등을 종합하여 각 DBMS마다 고유의 알고리즘에 따라 산출되는 ‘비용’으로 최적의 경로를 찾는 비용 기반 옵티마이저임</p>
+  </li>
+  <li>
+    <p>RBO와 CBO의 차이점</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>RBO</th>
+          <th>CBO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>최적화 기준</td>
+          <td>규칙에 정의된 우선순위</td>
+          <td>액세스 비용</td>
+        </tr>
+        <tr>
+          <td>성능 기준</td>
+          <td>개발자의 SQL 숙련도</td>
+          <td>옵티마이저의 예측 성능</td>
+        </tr>
+        <tr>
+          <td>특징</td>
+          <td>실행 계획 예측이 쉬움</td>
+          <td>성능 통계치 정보 활용, 예측이 복잡함</td>
+        </tr>
+        <tr>
+          <td>고려사항</td>
+          <td>개발자의 규칙 이해도, 규칙의 효율성</td>
+          <td>비용 산출 공식의 정확성</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h4 id="3-실행-계획">3. 실행 계획</h4>
+
+<ul>
+  <li>DBMS의 옵티마이저가 수립한 SQL 코드의 실행 절차와 방법을 의미</li>
+  <li>EXPLAIN 명령어를 통해 확인할 수 있으며, 그래픽이나 텍스트로 표현됨</li>
+  <li>실행 계획에는 요구사항들을 처리하기 위한 연산 순서가 적혀 있으며, 연산에는 조인, 테이블 검색, 필터, 정렬 등이 있음</li>
+</ul>
+
+<h4 id="4-쿼리-성능-최적화-방법">4. 쿼리 성능 최적화 방법</h4>
+
+<ul>
+  <li>실행 계획에 표시된 연산 순서, 조인 방식, 테이블 조회 방법 등을 참고하여 SQL문이 더 빠르고 효율적으로 작동하도록 SQL 코드와 인덱스를 재구성하는 것을 의미함</li>
+  <li>SQL 코드 재구성
+    <ul>
+      <li>WHERE 절 추가</li>
+      <li>WHERE 절에 연산자 사용 제한</li>
+      <li>IN을 EXISTS로 대체</li>
+      <li>힌트로 액세스 경로 및 조인 순서 변경</li>
+    </ul>
+  </li>
+  <li>인덱스 재구성
+    <ul>
+      <li>조회되는 속성과 조건을 고려하여 인덱스 구성</li>
+      <li>인덱스 추가 및 기존 인덱스의 열 순서 변경</li>
+      <li>테이블을 참조하는 다른 SQL문으로의 영향 고려</li>
+      <li>IOT(Index-Organized Table) 구성 고려</li>
+      <li>불필요한 인덱스 제거</li>
+    </ul>
+  </li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/07/12/theory132.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

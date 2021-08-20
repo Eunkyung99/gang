@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>OSI 참조 모델 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="OSI 참조 모델" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. OSI(Open System Interconnection) 참조 모델" />
+<meta property="og:description" content="1. OSI(Open System Interconnection) 참조 모델" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/08/24/theory175.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/08/24/theory175.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-24T20:27:13-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/08/24/theory175.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/08/24/theory175.html"},"headline":"OSI 참조 모델","dateModified":"2021-08-24T20:27:13-05:00","datePublished":"2021-08-24T20:27:13-05:00","description":"1. OSI(Open System Interconnection) 참조 모델","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">OSI 참조 모델</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-24T20:27:13-05:00" itemprop="datePublished">
+        Aug 24, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-osiopen-system-interconnection-참조-모델">1. OSI(Open System Interconnection) 참조 모델</h4>
+
+<ul>
+  <li>다른 시스템 간의 원활한 통신을 위해 ISO(국제표준화기구)에서 제안한 통신 규약(Protocol)임</li>
+  <li>OSI 7계층은 1~3 계층을 하위 계층, 4~7 계층을 상위 계층이라고 함
+    <ul>
+      <li>하위 계층: 물리 계층 -&gt; 데이터 링크 계층 -&gt; 네트워크 계층</li>
+      <li>상위 계층: 전송 계층 -&gt; 세션 계층 -&gt; 표현 계층 -&gt; 응용 계층</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="2-물리-계층">2. 물리 계층</h4>
+
+<ul>
+  <li>전송에 필요한 두 장치 간의 실제 접속과 절단 등 기계적, 전기적, 기능적, 절차적 특성에 대한 규칙을 정의함</li>
+  <li>물리적 전송 매체와 전송 신호 방식을 정의함</li>
+  <li>RS-232C, X.21 등의 표준이 있음</li>
+  <li>관련 장비: 리피터, 허브</li>
+</ul>
+
+<h4 id="3-데이터-링크-계층">3. 데이터 링크 계층</h4>
+
+<ul>
+  <li>두 개의 인접한 개방 시스템들 간에 신뢰성 있고 효율적인 정보 전송을 할 수 있도록 시스템 간 연결 설정과 유지 및 종료를 담당함</li>
+  <li>송신 측과 수신 측의 속도 차이 해결을 위한 흐름 제어 기능을 함</li>
+  <li>프레임의 시작과 끝을 구분하기 위한 프레임의 동기화 기능을 함</li>
+  <li>오류의 검출과 회복을 위한 오류 제어 기능을 함</li>
+  <li>프레임의 순서적 전송을 위한 순서 제어 기능을 함</li>
+  <li>HDLC, LAPB, LLC, MAC, LAPD, PPP 등의 표준이 있음</li>
+  <li>관련 장비: 랜카드, 브리지, 스위치</li>
+</ul>
+
+<h4 id="4-네트워크-계층">4. 네트워크 계층</h4>
+
+<ul>
+  <li>개방 시스템들 간의 네트워크 연결을 관리하는 기능과 데이터의 교환 및 중계 기능을 함</li>
+  <li>네트워크 연결을 설정, 유지, 해제하는 기능을 함</li>
+  <li>경로 설정(Routing), 데이터 교환 및 중계, 트래픽 제어, 패킷 정보 전송을 수행함</li>
+  <li>X.25, IP 등의 표준이 있음</li>
+  <li>관련 장비: 라우터</li>
+</ul>
+
+<h4 id="5-전송-계층">5. 전송 계층</h4>
+
+<ul>
+  <li>논리적 안정과 균일한 데이터 전송 서비스를 제공함으로써 종단 시스템 간에 투명한 데이터 전송을 가능하게 함</li>
+  <li>OSI 7계층 중 하위 3계층과 상위 3계층의 인터페이스를 담당함</li>
+  <li>종단 시스템 간의 전송 연결 설정, 데이터 전송, 연결 해제 기능을 함</li>
+  <li>주소 설정, 다중화(분할 및 재조립), 오류 제어, 흐름 제어를 수행함</li>
+  <li>TCP, UDP 등의 표준이 있음</li>
+  <li>관련 장비: 게이트웨이</li>
+</ul>
+
+<h4 id="6-세션-계층">6. 세션 계층</h4>
+
+<ul>
+  <li>송.수신 측 간의 관련성을 유지하고 대화 제어를 담당함</li>
+  <li>대화(회화) 구성 및 동기 제어, 데이터 교환 관리 기능을 함</li>
+  <li>동기점은 오류가 있는 데이터의 회복을 위해 사용하는 것으로, 종류에는 소동기점과 대동기점이 있음</li>
+</ul>
+
+<h4 id="7-표현-계층">7. 표현 계층</h4>
+
+<ul>
+  <li>응용 계층으로부터 받은 데이터를 세션 계층에 보내기 전에 통신에 적당한 형태로 변환하고, 세션 게층에서 받은 데이터는 응용 계층에 맞게 변환하는 기능을 함</li>
+  <li>서로 다른 데이터 표현 형태를 갖는 시스템 간의 상호 접속을 위해 필요한 계층임</li>
+  <li>코드 변환, 데이터 암호화, 데이터 압축, 구문 검색, 정보 형식(포맷) 변환, 문맥관리 기능을 함</li>
+</ul>
+
+<h4 id="8-응용-계층">8. 응용 계층</h4>
+
+<ul>
+  <li>사용자(응용 프로그램)가 OSI 환경에 접근할 수 있도록 서비스를 제공함</li>
+  <li>응용 프로세스 간의 정보 교환, 전자 사서함, 파일 전송, 가상 터미널 등의 서비스를 제공함</li>
+</ul>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/08/24/theory175.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>예외 처리 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="예외 처리" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 예외 처리(Exception Handling)" />
+<meta property="og:description" content="1. 예외 처리(Exception Handling)" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/08/11/theory161.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/08/11/theory161.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-11T09:30:43-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/08/11/theory161.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/08/11/theory161.html"},"headline":"예외 처리","dateModified":"2021-08-11T09:30:43-05:00","datePublished":"2021-08-11T09:30:43-05:00","description":"1. 예외 처리(Exception Handling)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">예외 처리</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-11T09:30:43-05:00" itemprop="datePublished">
+        Aug 11, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-예외-처리exception-handling">1. 예외 처리(Exception Handling)</h4>
+
+<ul>
+  <li>예외 처리는 예외가 발생했을 때 프로그래머가 해당 문제에 대비해 작성해놓은 처리 루틴이 수행되도록 하는 것</li>
+  <li>예외가 발생했을 때 일반적인 처리 루틴은 프로그램을 종료시키거나 로그를 남기는 것임</li>
+  <li>C++, Ada, Java, 자바스크립트와 같은 언어에는 예외 처리 기능이 내장되어 있음</li>
+  <li>필요한 경우 조건문을 이용해 예외 처리 루틴을 작성함</li>
+  <li>대표적인 예외의 원인
+    <ul>
+      <li>컴퓨터 하드웨어 문제</li>
+      <li>운영체제의 설정 실수</li>
+      <li>라이브러리 손상</li>
+      <li>사용자의 입력 실수</li>
+      <li>받아들일 수 없는 연산</li>
+      <li>할당하지 못하는 기억장치 접근</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="2-java의-예외-처리">2. Java의 예외 처리</h4>
+
+<ul>
+  <li>자바는 예외를 객체로 취급하며, 예외와 관련된 클래스를 java.lang 패키지에서 제공함</li>
+  <li>자바에서는 try~catch 문을 이용해 예외를 처리함</li>
+  <li>try 블록 코드를 수행하다 예외가 발생하면 예외를 처리하는 catch 블록으로 이동하여 예외 처리 코드를 수행하므로 예외가 발생한 이후의 코드는 실행되지 않음</li>
+  <li>catch 블록에서 선언한 변수는 해당 catch 블록에서만 유효함</li>
+  <li>try~catch 문 안에 또 다른 try~catch 문을 포함할 수 있음</li>
+  <li>
+    <p>try~catch 문 안에서는 실행 코드가 한 줄이라도 중괄호({ })를 생략할 수 없음</p>
+  </li>
+  <li>
+    <p>기본 형식</p>
+
+    <blockquote>
+      <p>try {</p>
+
+      <p>​	예외가 발생할 가능성이 있는 코드;</p>
+
+      <p>}</p>
+
+      <p>catch(예외객체1 매개변수){</p>
+
+      <p>​	예외객체1에 해당하는 예외 발생 시 처리 코드;</p>
+
+      <p>}</p>
+
+      <p>catch(예외객체2 매개변수){</p>
+
+      <p>​	예외객체2에 해당하는 예외 발생 시 처리 코드;</p>
+
+      <p>}</p>
+
+      <p>catch(예외객체n 매개변수){</p>
+
+      <p>​	예외객체n에 해당하는 예외 발생 시 처리 코드;</p>
+
+      <p>}</p>
+
+      <p>catch(Exception 매개변수){</p>
+
+      <p>​	예외객체1~n에 해당하지 않는 예외 발생 시 처리 코드;</p>
+
+      <p>}</p>
+
+      <p>finally{</p>
+
+      <p>​	예외의 발생 여부와 관계 없이 무조건 처리되는 코드;</p>
+
+      <p>}</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h4 id="3-java의-주요-예외-객체">3. Java의 주요 예외 객체</h4>
+
+<ul>
+  <li>ClassNotFoundException: 클래스를 찾지 못한 경우</li>
+  <li>NoSuchMethodException: 메소드를 찾지 못한 경우</li>
+  <li>FileNotFoundException: 파일을 찾지 못한 경우</li>
+  <li>InterruptedIOException: 입.출력 처리가 중단된 경우</li>
+  <li>ArithmeticException: 0으로 나누는 등의 산술 연산에 대한 예외가 발생한 경우</li>
+  <li>IllegalArgumentException: 잘못된 인자를 전달한 경우</li>
+  <li>NumberFormatException: 숫자 형식으로 변환할 수 없는 문자열을 숫자 형식으로 변환한 경우</li>
+  <li>ArrayIndexOutOfBoundsException: 배열의 범위를 벗어난 접근을 시도한 경우</li>
+  <li>NegativeArraySizeException: 0보다 작은 값으로 배열의 크기를 지정한 경우</li>
+  <li>NullPointerException: 존재하지 않는 객체를 참조한 경우</li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/08/11/theory161.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>DML-SELECT-1 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="DML-SELECT-1" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 일반 형식" />
+<meta property="og:description" content="1. 일반 형식" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/07/01/theory121.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/07/01/theory121.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-01T18:48:12-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/07/01/theory121.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/07/01/theory121.html"},"headline":"DML-SELECT-1","dateModified":"2021-07-01T18:48:12-05:00","datePublished":"2021-07-01T18:48:12-05:00","description":"1. 일반 형식","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">DML-SELECT-1</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-07-01T18:48:12-05:00" itemprop="datePublished">
+        Jul 1, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-일반-형식">1. 일반 형식</h4>
+
+<blockquote>
+  <p>SELECT [PREDICATE] [테이블명.]속성명 [AS 별칭] [, [테이블명.]속성명, …] 
+[, 그룹함수(속성명) [AS 별칭]] 
+[, Windows함수 OVER (PARTITION BY 속성명1, 속성명2, … ORDER BY 속성명3, 속성명4, …)] 
+FROM 테이블명[, 테이블명, …] 
+[WHERE 조건]
+[GROUP BY 속성명, 속성명, …]
+[HAVING 조건]
+[ORDER BY 속성명 [ASC | DESC]];</p>
+</blockquote>
+
+<ul>
+  <li>SELECT 절
+    <ul>
+      <li>PREDICATE: 검색할 튜플 수를 제한하는 명령어를 기술
+        <ul>
+          <li>DISTINCT: 중복된 튜플이 있으면 그 중 첫번째 한 개만 표시</li>
+        </ul>
+      </li>
+      <li>속성명: 검색하여 불러올 속성(열) 또는 속성을 이용한 수식을 지정</li>
+      <li>AS: 속성이나 연산의 이름을 다른 이름으로 표시하기 위해 사용</li>
+    </ul>
+  </li>
+  <li>FROM 절: 검색할 데이터가 들어있는 테이블 이름을 기술</li>
+  <li>WHERE 절: 검색할 조건을 기술</li>
+  <li>ORDER BY 절: 데이터를 정렬하여 검색할 때 사용
+    <ul>
+      <li>속성명: 정렬의 기준이 되는 속성명을 기술</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>[ASC</td>
+              <td>DESC] : 정렬 방식으로, ‘ASC’는 오름차순, ‘DESC’는 내림차순임. 생략하면 오름차순으로 지정됨</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="2-조건-연산자">2. 조건 연산자</h4>
+
+<ul>
+  <li>비교 연산자</li>
+  <li>= : 같다 / &lt;&gt; : 같지 않다 / &gt; : 크다 / &lt; : 작다 / &gt;= : 크거나 같다 / &lt;= : 작거나 같다</li>
+  <li>논리 연산자: NOT, AND, OR</li>
+  <li>LIKE 연산자: 대표 문자를 이용해 지정된 속성의 값이 문자 패턴과 일치하는 튜플을 검색하기 위해 사용됨</li>
+  <li>% : 모든 문자를 대표함 / _ : 문자 하나를 대표함 / # : 숫자 하나를 대표함</li>
+  <li>다음과 같은 기본 테이블에 대해 다음 예제의 결과를 확인하시오.</li>
+  <li><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gt3ws57g5dj30ng0bq0uk.jpg" alt="스크린샷 2021-08-03 오후 10.13.08" /></li>
+</ul>
+
+<h4 id="3-기본-검색">3. 기본 검색</h4>
+
+<ul>
+  <li>SELECT 절에 원하는 속성을 지정하여 검색함</li>
+  <li>
+    <사원> 테이블의 모든 튜플을 검색하시오.
+</사원>
+    <ul>
+      <li>SELECT * FROM 사원;</li>
+      <li>SELECT 사원.* FROM 사원;</li>
+      <li>SELECT 이름, 부서, 생일, 주소, 기본급 FROM 사원;</li>
+      <li>SELECT 사원.이름, 사원.부서, 사원.생일, 사원.주소, 사원.기본급 FROM 사원;</li>
+    </ul>
+  </li>
+  <li>위의 SQL은 모두 보기에 주어진 <사원> 테이블 전체를 그대로 출력함</사원></li>
+  <li>
+    <사원> 테이블에서 '주소'만 검색하되 같은 '주소'는 한 번만 출력하시오.
+</사원>
+    <ul>
+      <li>SELECT DISTINCT 주소
+FROM 사원;</li>
+    </ul>
+  </li>
+  <li>
+    <사원> 테이블에서 '기본급'에 특별수당 10을 더한 월급을 "XX부서의 XXX의 월급 XXX" 형태로 출력하시오.
+</사원>
+    <ul>
+      <li>SELECT 부서+’부서의’ AS 부서2, 이름 + ‘의 월급’ AS 이름2, 기본급+10 AS 기본급2 
+FROM 사원;</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="4-조건-지정-검색">4. 조건 지정 검색</h4>
+
+<ul>
+  <li>WHERE 절에 조건을 지정하여 조건에 만족하는 튜플만 검색함</li>
+  <li>
+    <사원> 테이블에서 '기획'부의 모든 튜플을 검색하시오.
+</사원>
+  </li>
+  <li>SELECT *
+FROM 사원
+WHERE 부서=’기획’;</li>
+  <li>
+    <사원> 테이블에서 "기획" 부서에 근무하면서 "대흥동"에 사는 사람의 튜플을 검색하시오.
+</사원>
+  </li>
+  <li>SELECT *
+FROM 사원
+WHERE 부서=’기획’ AND 주소=’대흥동’;</li>
+  <li>
+    <사원> 테이블에서 '부서'가 "기획"이거나 "인터넷"인 튜플을 검색하시오.
+</사원>
+  </li>
+  <li>SELECT *
+FROM 사원
+WHERE 부서=’기획’ OR 부서=’인터넷’;</li>
+  <li>
+    <사원> 테이블에서 성이 '김'인 사람의 튜플을 검색하시오.
+</사원>
+  </li>
+  <li>SELECT *
+FROM 사원
+WHERE 이름 LIKE “김%”;</li>
+  <li>
+    <사원> 테이블에서 '생일'이 '01/01/69'에서 '12/31/73' 사이인 튜플을 검색하시오.
+</사원>
+  </li>
+  <li>SELECT *
+FROM 사원
+WHERE 생일 BETWEEN #01/01/69# AND #12/31/73#;</li>
+  <li>
+    <사원> 테이블에서 '주소'가 NULL인 튜플을 검색하시오.
+</사원>
+  </li>
+  <li>SELECT *
+FROM 사원
+WHERE 주소 IS NULL;</li>
+</ul>
+
+<h4 id="5-정렬-검색">5. 정렬 검색</h4>
+
+<ul>
+  <li>ORDER BY 절에 특정 속성을 지정하여 지정된 속성으로 자료를 정렬하여 검색함</li>
+  <li>
+    <사원> 테이블에서 '주소'를 기준으로 내림차순 정렬시켜 상위 2개 튜플만 검색하시오.
+</사원>
+  </li>
+  <li>SELECT TOP 2 *
+FROM 사원
+ORDER BY 주소 DESC;</li>
+  <li>
+    <사원> 테이블에서 '부서'를 기준으로 오름차순 정렬하고, 같은 '부서'에 대해서는 '이름'을 기준으로 내림차순 정렬시켜서 검색하시오.
+</사원>
+  </li>
+  <li>SELECT *
+FROM 사원
+ORDER BY 부서 ASC, 이름 DESC;</li>
+</ul>
+
+<h4 id="6-하위-질의">6. 하위 질의</h4>
+
+<ul>
+  <li>조건절에 주어진 질의를 먼저 수행하여 그 검색 결과를 조건절의 피연산자로 사용함</li>
+  <li>“취미”가 “나이트댄스”인 사원의 ‘이름’과 ‘주소’를 검색하시오.</li>
+  <li>SELECT 이름, 주소
+FROM 사원
+WHERE 이름 = (SELECT 이름 FROM 여가활동 WHERE 취미=’나이트댄스’);</li>
+  <li>취미활동을 하지 않는 사원들을 검색하시오.</li>
+  <li>SELECT *
+FROM 사원
+WHERE 이름 NOT IN (SELECT 이름 FROM 여가활동);</li>
+  <li>취미활동을 하는 사원들의 부서를 검색하시오.</li>
+  <li>SELECT 부서
+FROM 사원
+WHERE EXISTS (SELECT 이름 FROM 여가활동 WHERE 여가활동.이름 = 사원.이름);</li>
+</ul>
+
+<h4 id="7-복수-테이블-검색">7. 복수 테이블 검색</h4>
+
+<ul>
+  <li>여러 테이블을 대상으로 검색을 수행함</li>
+  <li>‘경력’이 10년 이상인 사원의 ‘이름’, ‘부서’, ‘취미’, ‘경력’을 검색하시오.</li>
+  <li>SELECT 사원.이름, 사원.부서, 여가활동.취미, 여가활동.경력
+FROM 사원, 여가활동
+WHERE 여가활동.경력 &gt;= 10 AND 사원.이름 = 여가활동.이름;</li>
+</ul>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/07/01/theory121.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

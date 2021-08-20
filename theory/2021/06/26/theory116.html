@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>복잡도 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="복잡도" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 복잡도(Complexity)" />
+<meta property="og:description" content="1. 복잡도(Complexity)" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/06/26/theory116.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/06/26/theory116.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-26T07:03:12-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/06/26/theory116.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/06/26/theory116.html"},"headline":"복잡도","dateModified":"2021-06-26T07:03:12-05:00","datePublished":"2021-06-26T07:03:12-05:00","description":"1. 복잡도(Complexity)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">복잡도</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-26T07:03:12-05:00" itemprop="datePublished">
+        Jun 26, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-복잡도complexity">1. 복잡도(Complexity)</h4>
+
+<ul>
+  <li>시스템이나 시스템 구성 요소 또는 소프트웨어의 복잡한 정도를 나타내는 말</li>
+  <li>시스템 또는 소프트웨어를 어느 정도의 수준까지 테스트해야 하는지 또는 개발하는 데 어느 정도의 자원이 소요되는지 예측하는 데 사용</li>
+</ul>
+
+<h4 id="2-시간-복잡도">2. 시간 복잡도</h4>
+
+<ul>
+  <li>알고리즘을 수행하기 위해 프로세스가 수행하는 연산 횟수를 수치화한 것을 의미</li>
+  <li>시간 복잡도가 낮을수록 알고리즘의 실행시간이 짧고, 높을수록 실행시간이 길어짐</li>
+  <li>점근 표기법의 종류
+    <ul>
+      <li>빅오 표기법
+        <ul>
+          <li>알고리즘의 실행시간이 최악일 때를 표기하는 방법</li>
+          <li>입력값에 대해 알고리즘을 수행했을 때 명령어의 실행 횟수는 어떠한 경우에도 표기 수치보다 많을 수 없음</li>
+        </ul>
+      </li>
+      <li>세타 표기법
+        <ul>
+          <li>알고리즘의 실행시간이 평균일 때를 표기하는 방법</li>
+          <li>입력값에 대해 알고리즘을 수행했을 때 명령어 실행 횟수의 평균적인 수치를 표기</li>
+        </ul>
+      </li>
+      <li>오메가 표기법
+        <ul>
+          <li>알고리즘의 실행시간이 최상일 때를 표기하는 방법</li>
+          <li>입력값에 대해 알고리즘을 수행했을 때 명령어의 실행 횟수는 어떠한 경우에도 표기 수치보다 적을 수 없음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="3-빅오-표기법으로-표현한-최악의-알고리즘-시간-복잡도">3. 빅오 표기법으로 표현한 최악의 알고리즘 시간 복잡도</h4>
+
+<ul>
+  <li>O(1)
+    <ul>
+      <li>입력값(n)에 관계 없이 일정하게 문제 해결에 하나의 단계만을 거침</li>
+      <li>스택의 삽입, 삭제</li>
+    </ul>
+  </li>
+  <li>O(logn)
+    <ul>
+      <li>문제 해결에 필요한 단계가 입력값(n) 또는 조건에 의해 감소함</li>
+      <li>이진 트리, 이진 검색</li>
+    </ul>
+  </li>
+  <li>O(n)
+    <ul>
+      <li>문제 해결에 필요한 단계가 입력값(n)과 1:1의 관계를 가짐</li>
+      <li>for 문</li>
+    </ul>
+  </li>
+  <li>O(nlogn)
+    <ul>
+      <li>문제 해결에 필요한 단계가 n(logn)번만큼 수행됨</li>
+      <li>힙 정렬, 2-way 합병 정렬</li>
+    </ul>
+  </li>
+  <li>O(n^2)
+    <ul>
+      <li>문제 해결에 필요한 단계가 입력값(n)의 제곱만큼 수행됨</li>
+      <li>삽입 정렬, 쉘 정렬, 선택 정렬, 버블 정렬, 퀵 정렬</li>
+    </ul>
+  </li>
+  <li>O(2^n)
+    <ul>
+      <li>문제 해결에 필요한 단계가 2의 입력값(n) 제곱만큼 수행됨</li>
+      <li>피보나치 수열</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="4-순환-복잡도">4. 순환 복잡도</h4>
+
+<ul>
+  <li>
+    <p>한 프로그램의 논리적인 복잡도를 측정하기 위한 소프트웨어의 척도</p>
+  </li>
+  <li>
+    <p>맥케이브 순환도 또는 맥케이브 복잡도 메트릭스라고도 함</p>
+  </li>
+  <li>
+    <p>제어 프름도 이론에 기초를 둠</p>
+  </li>
+  <li>
+    <p>제어 흐름도 G에서 순환 복잡도 V(G)는 다음과 같은 방법으로 계산 가능</p>
+
+    <ul>
+      <li>순환 복잡도는 제어 흐름도의 영역 수와 일치하므로 영역 수를 계산</li>
+      <li>V(G) = E - N + 2 : E는 화살표 수, N은 노드의 수</li>
+    </ul>
+  </li>
+  <li>
+    <p>제어 흐름도가 다음과 같을 때 순환 복잡도를 계산하시오.</p>
+
+    <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gs9c3zvag9j30rc0zqqv5.jpg" alt="스크린샷 2021-07-08 오전 11.30.58" /></p>
+
+    <ol>
+      <li>제어 흐름도에서 화살표로 구분되는 각 영역의 개수를 구하면 4<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gs9c5dqf5qj30qs0x0npd.jpg" alt="스크린샷 2021-07-08 오전 11.32.13" /></li>
+      <li>순환 복잡도 = 화살표의 수 - 노드의 수 + 2이므로 11 - 9 + 2 = 4</li>
+    </ol>
+  </li>
+</ul>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/06/26/theory116.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>환경 변수 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="환경 변수" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 환경 변수(Environment Variable)" />
+<meta property="og:description" content="1. 환경 변수(Environment Variable)" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/08/22/theory172.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/08/22/theory172.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-22T06:23:43-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/08/22/theory172.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/08/22/theory172.html"},"headline":"환경 변수","dateModified":"2021-08-22T06:23:43-05:00","datePublished":"2021-08-22T06:23:43-05:00","description":"1. 환경 변수(Environment Variable)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">환경 변수</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-22T06:23:43-05:00" itemprop="datePublished">
+        Aug 22, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-환경-변수environment-variable">1. 환경 변수(Environment Variable)</h4>
+
+<ul>
+  <li>시스템 소프트웨어의 동작에 영향을 미치는 동적인 값들의 모임을 의미함</li>
+  <li>환경 변수는 변수명과 값으로 구성됨</li>
+  <li>시스템의 기본 정보를 저장함</li>
+  <li>자식 프로세스에 상속됨</li>
+  <li>시스템 전반에 걸쳐 적용되는 시스템 환경 변수와 사용자 계정 내에서만 적용되는 사용자 환경 변수로 구분됨</li>
+</ul>
+
+<h4 id="2-windows의-주요-환경-변수">2. Windows의 주요 환경 변수</h4>
+
+<ul>
+  <li>환경 변수를 명령어나 스크립트에서 사용하려면 변수명 앞뒤에 ‘%’를 입력해야 함</li>
+  <li>Windows에서 set을 입력하면 모든 환경 변수와 값을 출력함</li>
+  <li>환경 변수
+    <ul>
+      <li>%ALLUSERPROFILE%
+        <ul>
+          <li>모든 사용자의 프로필이 저장된 폴더</li>
+        </ul>
+      </li>
+      <li>%APPDATA%
+        <ul>
+          <li>설치된 프로그램의 필요 데이터가 저장된 폴더</li>
+        </ul>
+      </li>
+      <li>%COMSPEC%
+        <ul>
+          <li>기본 명령 프롬프트로 사용할 프로그램명</li>
+        </ul>
+      </li>
+      <li>%HOMEDRIVE%
+        <ul>
+          <li>로그인한 계정의 정보가 저장된 드라이브</li>
+        </ul>
+      </li>
+      <li>%HOMEPATH%
+        <ul>
+          <li>로그인한 계정의 기본 폴더</li>
+        </ul>
+      </li>
+      <li>%LOGONSERVER%
+        <ul>
+          <li>로그인한 계정이 접속한 서버명</li>
+        </ul>
+      </li>
+      <li>%PATH%
+        <ul>
+          <li>실행 파일을 찾는 경로</li>
+        </ul>
+      </li>
+      <li>%PATHEXT%
+        <ul>
+          <li>cmd에서 실행할 수 있는 파일의 확장자 목록</li>
+        </ul>
+      </li>
+      <li>%PROGRAMFILES%
+        <ul>
+          <li>기본 프로그램의 설치 폴더</li>
+        </ul>
+      </li>
+      <li>%SYSTEMDRIVE%
+        <ul>
+          <li>Windows가 부팅된 드라이브</li>
+        </ul>
+      </li>
+      <li>%SYSTEMROOT%
+        <ul>
+          <li>부팅된 운영체제가 들어 있는 폴더</li>
+        </ul>
+      </li>
+      <li>%TEMP% 또는 %TMP%
+        <ul>
+          <li>임시 파일이 저장되는 폴더</li>
+        </ul>
+      </li>
+      <li>%USERDOMAIN%
+        <ul>
+          <li>로그인한 시스템의 도메인명</li>
+        </ul>
+      </li>
+      <li>%USERNAME%
+        <ul>
+          <li>로그인한 계정 이름</li>
+        </ul>
+      </li>
+      <li>%USERPROFILE%
+        <ul>
+          <li>로그인한 유저의 프로필이 저장된 폴더명</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="3-unixlinux의-주요-환경-변수">3. UNIX/LINUX의 주요 환경 변수</h4>
+
+<ul>
+  <li>UNIX나 LINUX에서 환경 변수를 명령어나 스크립트에서 사용하려면 변수명 앞에 ‘$’를 입력해야 함</li>
+  <li>UNIX나 LINUX에서는 set, env, printenv, setenv 중 하나를 입력하면 모든 환경 변수와 값을 표시함</li>
+  <li>환경 변수
+    <ul>
+      <li>$DISPLAY
+        <ul>
+          <li>현재 X 윈도 디스플레이 위치</li>
+        </ul>
+      </li>
+      <li>$HOME
+        <ul>
+          <li>사용자의 홈 디렉터리</li>
+        </ul>
+      </li>
+      <li>$LANG
+        <ul>
+          <li>프로그램 사용 시 기본적으로 지원되는 언어</li>
+        </ul>
+      </li>
+      <li>$MAIL
+        <ul>
+          <li>메일을 보관하는 경로</li>
+        </ul>
+      </li>
+      <li>$PATH
+        <ul>
+          <li>실행 파일을 찾는 경로</li>
+        </ul>
+      </li>
+      <li>$PS1
+        <ul>
+          <li>쉘 프롬프트 정보</li>
+        </ul>
+      </li>
+      <li>$PWD
+        <ul>
+          <li>현재 작업하는 디렉터리</li>
+        </ul>
+      </li>
+      <li>$TERM
+        <ul>
+          <li>로긴 터미널 타입</li>
+        </ul>
+      </li>
+      <li>$USER
+        <ul>
+          <li>사용자의 이름</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/08/22/theory172.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

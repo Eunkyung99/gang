@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>릴리즈 노트 작성 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="릴리즈 노트 작성" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 릴리즈 노트(Release Note)" />
+<meta property="og:description" content="1. 릴리즈 노트(Release Note)" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/08/31/theory192.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/08/31/theory192.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-31T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/08/31/theory192.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/08/31/theory192.html"},"headline":"릴리즈 노트 작성","dateModified":"2021-08-31T00:00:00-05:00","datePublished":"2021-08-31T00:00:00-05:00","description":"1. 릴리즈 노트(Release Note)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">릴리즈 노트 작성</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-31T00:00:00-05:00" itemprop="datePublished">
+        Aug 31, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-릴리즈-노트release-note">1. 릴리즈 노트(Release Note)</h4>
+
+<ul>
+  <li>소프트웨어 개발 과정에서 정리된 릴리즈 정보를 최종 사용자인 고객과 공유하기 위한 문서임</li>
+  <li>릴리즈 노트를 통해 테스트 진행 결과와 소프트웨어 사양에 대한 개발팀의 정확한 준수 여부를 확인할 수 있음</li>
+  <li>소프트웨어에 포함된 전체 기능, 서비스의 내용, 개선 사항 등을 사용자와 공유할 수 있음</li>
+</ul>
+
+<h4 id="2-릴리즈-노트-작성-항목">2. 릴리즈 노트 작성 항목</h4>
+
+<ul>
+  <li>Header(머릿말)
+    <ul>
+      <li>릴리즈 노트 이름, 소프트웨어 이름, 릴리즈 버전, 릴리즈 날짜, 릴리즈 노트 날짜, 릴리즈 노트 버전 등</li>
+    </ul>
+  </li>
+  <li>개요
+    <ul>
+      <li>소프트웨어 및 변경사항 전체에 대한 간략한 내용</li>
+    </ul>
+  </li>
+  <li>목적
+    <ul>
+      <li>해당 릴리즈 버전에서의 새로운 기능이나 수정된 기능의 목록과 릴리즈 노트의 목적에 대한 간략한 개요</li>
+    </ul>
+  </li>
+  <li>재현 항목
+    <ul>
+      <li>버그 발견에 대한 과정 설명</li>
+    </ul>
+  </li>
+  <li>수정/개선 내용
+    <ul>
+      <li>버그를 수정/개선한 내용을 간단히 설명</li>
+    </ul>
+  </li>
+  <li>사용자 영향도
+    <ul>
+      <li>사용자가 다른 기능들을 사용하는데 있어 해당 릴리즈 버전에서의 기능 변화가 미칠 수 있는 영향에 대한 설명</li>
+    </ul>
+  </li>
+  <li>SW 지원 영향도
+    <ul>
+      <li>해당 릴리즈 버전에서의 기능 변화가 다른 응용 프로그램들을 지원하는 프로세스에 미칠 수 있는 영향에 대한 설명</li>
+    </ul>
+  </li>
+  <li>노트
+    <ul>
+      <li>SW/HW 설치 항목, 업그레이드, 소프트웨어 문서화에 대한 참고 항목</li>
+    </ul>
+  </li>
+  <li>면책 조항
+    <ul>
+      <li>회사 및 소프트웨어와 관련하여 참조할 사항</li>
+      <li>예) 프리웨어, 불법 복제 금지 등</li>
+    </ul>
+  </li>
+  <li>연락처
+    <ul>
+      <li>사용자 지원 및 문의 응대를 위한 연락처 정보</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="3-릴리즈-노트-작성-순서">3. 릴리즈 노트 작성 순서</h4>
+
+<ol>
+  <li>모듈 식별
+    <ol>
+      <li>모듈별 빌드 수행 후 릴리즈 노트에 작성될 내용을 확인함</li>
+    </ol>
+  </li>
+  <li>릴리즈 정보 확인
+    <ol>
+      <li>릴리즈 노트 이름, 소프트웨어 이름, 릴리즈 버전, 릴리즈 날짜, 노트 날짜, 노트 버전 등을 확인함</li>
+    </ol>
+  </li>
+  <li>릴리즈 노트 개요 작성
+    <ol>
+      <li>소프트웨어 및 변경사항 전체에 대한 간략한 내용을 작성함</li>
+    </ol>
+  </li>
+  <li>영향도 체크
+    <ol>
+      <li>버그나 이슈 관련 내용 또는 해당 릴리즈 버전에서의 기능 변화가 다른 소프트웨어나 기능을 사용하는데 미칠 수 있는 영향에 대해 기술함</li>
+    </ol>
+  </li>
+  <li>정식 릴리즈 노트 작성
+    <ol>
+      <li>Header(머릿말), 개요, 영향도 체크 항목을 포함하여 정식 릴리즈 노트에 작성될 기본 사항을 작성함</li>
+    </ol>
+  </li>
+  <li>추가 개선 항목 식별
+    <ol>
+      <li>추가 버전 릴리즈 노트 작성이 필요한 경우 추가 릴리즈 노트를 작성함</li>
+    </ol>
+  </li>
+</ol>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/08/31/theory192.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

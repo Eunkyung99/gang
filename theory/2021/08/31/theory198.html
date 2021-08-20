@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Git(깃) 명령어 활용 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Git(깃) 명령어 활용" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="다음은 지역 저장소의 생성, 변경 내역 저장, 새로운 브랜치의 생성과 병합 그리고 지역 저장소의 변경 내역을 원격 저장소에 저장하는 과정임" />
+<meta property="og:description" content="다음은 지역 저장소의 생성, 변경 내역 저장, 새로운 브랜치의 생성과 병합 그리고 지역 저장소의 변경 내역을 원격 저장소에 저장하는 과정임" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/08/31/theory198.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/08/31/theory198.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-31T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/08/31/theory198.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/08/31/theory198.html"},"headline":"Git(깃) 명령어 활용","dateModified":"2021-08-31T00:00:00-05:00","datePublished":"2021-08-31T00:00:00-05:00","description":"다음은 지역 저장소의 생성, 변경 내역 저장, 새로운 브랜치의 생성과 병합 그리고 지역 저장소의 변경 내역을 원격 저장소에 저장하는 과정임","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Git(깃) 명령어 활용</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-31T00:00:00-05:00" itemprop="datePublished">
+        Aug 31, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>다음은 지역 저장소의 생성, 변경 내역 저장, 새로운 브랜치의 생성과 병합 그리고 지역 저장소의 변경 내역을 원격 저장소에 저장하는 과정임</p>
+
+<h4 id="계정-설정하기">계정 설정하기</h4>
+
+<p>Git을 통해 버전을 관리하려면 먼저 사용자 이름과 사용자 이메일을 등록하여 계정을 설정해야 함</p>
+
+<blockquote>
+  <p>$ git config –global user.name “gang”</p>
+
+  <p>$ git config –global user.email “gang@naver.com”</p>
+</blockquote>
+
+<p>#### 지역 저장소 만들기</p>
+
+<p>계정을 설정한 후에는 버전 관리 내역이 저장될 지역 저장소를 만들어야 함. 지역 저장소는 실제 개발 작업을 진행하는 폴더에 생성해야 함</p>
+
+<ol>
+  <li>작업 폴더가 gitstudy라고 가정하고 gitstudy로 이동한 후 ‘init’ 명령을 실행하면, 현재 폴더에 ‘.GIT’이라는 지역 저장소 폴더가 그 안에 버전 관리에 필요한 폴더 및 파일들을 포함한 상태로 생성됨. 이후 버전 관리 내역은 ‘.GIT’ 폴더에 저장됨</li>
+</ol>
+
+<blockquote>
+  <p>$ git init</p>
+</blockquote>
+
+<h4 id="변경-내역을-지역-저장소에-저장하기">변경 내역을 지역 저장소에 저장하기</h4>
+
+<p>작업을 수행하여 변경된 파일들은 다음의 두 단계를 거쳐 지역 저장소에 저장됨</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtf6ag21z0j60w808o75h02.jpg" alt="스크린샷 2021-08-13 오후 4.03.20" /></p>
+
+<p>** 작업 폴더(gitstudy)에 Java로 작성한 4개의 파일들이 있고 4개의 파일 모두 변동 내역이 발생한 상태라고 가정하고 이후 작업을 수행함</p>
+
+<p>[파일 목록]</p>
+
+<p>Test01.java</p>
+
+<p>Test02.java</p>
+
+<p>Test03.java</p>
+
+<p>Test04.java</p>
+
+<ol>
+  <li>작업 내역을 지역 저장소에 저장하기 전에 스테이징 영역에 추가함</li>
+</ol>
+
+<blockquote>
+  <p>$ git add –all //파일 중 변경 내용이 있는 파일만 모두 스테이징 영역에 추가함</p>
+</blockquote>
+
+<ol>
+  <li>작업 내역을 지역 저장소에 저장함</li>
+</ol>
+
+<blockquote>
+  <p>$ git commit -m “첫 번재 커밋 작업 완료” //작업 내역을 지역 저장소에 저장하면서 “첫 번재 커밋 작업 완료”라는 메시지를 부여한다. 메시지는 향후 작업 시 참고 자료가 됨</p>
+</blockquote>
+
+<h4 id="병합merge-기능-사용하기">병합(Merge) 기능 사용하기</h4>
+
+<p>처음 commit을 하면 마스터 브랜치가 생성되고 이 브랜치에서 실질적인 버전 관리가 수행됨. 기본적인 작업과 별도로 새로운 기능에 대한 테스트가 필요할 때는 새로운 브랜치를 만들어 테스트를 수행한 후 테스트가 정상적으로 완료되면 새로운 기능에 대한 작업 내역을 마스터 브랜치에 병합하여 저장함</p>
+
+<ol>
+  <li>새로운 브랜치(new_test)를 생성함</li>
+</ol>
+
+<blockquote>
+  <p>$ git branch new_test</p>
+</blockquote>
+
+<ol>
+  <li>가장 최근의 commit을 가리키는 포인터를 현재 작업중인 마스터 브랜치에서 ‘new_test’ 브랜치로 이동함</li>
+</ol>
+
+<blockquote>
+  <p>$ git checkout new_test</p>
+</blockquote>
+
+<ol>
+  <li>현재 작업 폴더의 변경 내역을 저장함. commit을 가리키는 포인터가 ‘new_test’ 브랜치로 옮겼기 때문에 변경 내역은 ‘new_test’ 브랜치에 저장됨</li>
+</ol>
+
+<ul>
+  <li>Test05.java를 생성하였다고 가정한다.</li>
+</ul>
+
+<blockquote>
+  <p>$ git add Test05.java //’Test05.java’ 파일을 스테이징 영역에 추가함</p>
+
+  <p>$ git commit -m “두 번째 커밋 완료” //’new_test’ 브랜치에서 커밋을 수행하면서 “두 번째 커밋 완료”라는 메시지를 부여함</p>
+</blockquote>
+
+<ol>
+  <li>‘new_test’ 브랜치의 커밋 내역을 마스터 브랜치와 병합하기 위해 commit을 가리키는 포인터를 마스터(master) 브랜치로 이동함</li>
+</ol>
+
+<blockquote>
+  <p>$ git checkout master</p>
+</blockquote>
+
+<ol>
+  <li>‘new_test’ 브랜치의 커밋 내역을 마스터 브랜치와 병합한 후 ‘new_test’ 브랜치를 제거함</li>
+</ol>
+
+<blockquote>
+  <p>$ git merge new_test //’new_test’ 브랜치의 커밋 내역을 마스터 브랜치에 반영함</p>
+
+  <p>$ git branch –d new_test //new_test 브랜치를 제거함</p>
+</blockquote>
+
+<h4 id="지역-저장소의-버전-관리-내역을-원격-저장소에-저장하기">지역 저장소의 버전 관리 내역을 원격 저장소에 저장하기</h4>
+
+<p>원격 저장소는 여러 사람들이 협업을 위해 공동으로 버전을 관리하는 곳으로, 자신의 버전 관리 내역을 반영하거나 다른 개발자의 변경 내용을 가져올 때 사용함</p>
+
+<ol>
+  <li>지역 저장소의 변경 내역을 원격 저장소에 반영할 때 사용하는 명령이 push인데, 이 명령을 사용하려면 원격 저장소의 위치를 별명으로 지정해야 함</li>
+</ol>
+
+<blockquote>
+  <p>$ git remote add abc https://github.com/kek/remotetest.git //사용자가 ‘kek’이고 저장소 이름이 ‘remotetest’인 원격 저장소의 별명을 abc로 지정함</p>
+</blockquote>
+
+<ol>
+  <li>지역 저장소의 변경 내역을 다른 개발자와 공유하기 위해 원격 저장소에 저장함</li>
+</ol>
+
+<blockquote>
+  <p>$ git push abc master //원격 저장소(abc)에 마스터 브랜치의 내용을 반영함</p>
+</blockquote>
+
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtf6olm340j61220iq43702.jpg" alt="스크린샷 2021-08-13 오후 4.16.55" /></p>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/08/31/theory198.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

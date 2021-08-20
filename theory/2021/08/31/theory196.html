@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>소프트웨어 버전 등록 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="소프트웨어 버전 등록" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 소프트웨어 패키징의 형상 관리" />
+<meta property="og:description" content="1. 소프트웨어 패키징의 형상 관리" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/08/31/theory196.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/08/31/theory196.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-31T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/08/31/theory196.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/08/31/theory196.html"},"headline":"소프트웨어 버전 등록","dateModified":"2021-08-31T00:00:00-05:00","datePublished":"2021-08-31T00:00:00-05:00","description":"1. 소프트웨어 패키징의 형상 관리","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">소프트웨어 버전 등록</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-31T00:00:00-05:00" itemprop="datePublished">
+        Aug 31, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-소프트웨어-패키징의-형상-관리">1. 소프트웨어 패키징의 형상 관리</h4>
+
+<ul>
+  <li>형상 관리(SCM; Software Configuration Management)는 개발 과정에서 소프트웨어의 변경 사항을 관리하기 위해 개발된 일련의 활동임</li>
+  <li>형상 관리는 소프트웨어 개발의 전 단계에 적용되는 활동이며, 유지보수 단계에서도 수행됨</li>
+  <li>형상 관리는 소프트웨어 개발의 전체 비용을 줄이고, 개발 과정의 여러 방해 요인이 최소화되도록 보증하는 것을 목적으로 함</li>
+</ul>
+
+<h4 id="2-형상-관리-기능">2. 형상 관리 기능</h4>
+
+<ul>
+  <li>형상 식별: 형상 관리 대상에 이름과 관리 번호를 부여하고, 계층 구조로 구분하여 수정 및 추적이 용이하도록 하는 작업</li>
+  <li>버전 제어: 소프트웨어 업그레이드나 유지 보수 과정에서 생성된 다른 버전의 형상 항목을 관리하고, 이를 위해 특정 절차와 도구(Tool)를 결합시키는 작업</li>
+  <li>형상 통제: 식별된 형상 항목에 대한 변경 요구를 검토하여 현재의 기준선이 잘 반영될 수 있도록 조정하는 작업</li>
+  <li>형상 감사: 기준선의 무결성을 평가하기 위해 확인, 검증, 검열 과정을 통해 공식적으로 승인하는 작업</li>
+  <li>형상 기록: 형상의 식별, 통제, 감사 작업의 결과를 기록.관리하고 보고서를 작성하는 작업</li>
+</ul>
+
+<h4 id="3-소프트웨어의-버전-등록-관련-주요-기능">3. 소프트웨어의 버전 등록 관련 주요 기능</h4>
+
+<ul>
+  <li>저장소(Repository)
+    <ul>
+      <li>최신 버전의 파일들과 변경 내역에 대한 정보들이 저장되어 있는 곳</li>
+    </ul>
+  </li>
+  <li>가져오기(Import)
+    <ul>
+      <li>버전 관리가 되고 있지 않은 아무것도 없는 저장소(Repository)에 처음으로 파일을 복사함</li>
+    </ul>
+  </li>
+  <li>체크아웃(Check-Out)
+    <ul>
+      <li>프로그램을 수정하기 위해 저장소에서 파일을 받아옴</li>
+      <li>소스 파일과 함께 버전 관리를 위한 파일들도 받아옴</li>
+    </ul>
+  </li>
+  <li>체크인(Check-In)
+    <ul>
+      <li>체크아웃 한 파일의 수정을 완료한 후 저장소의 파일을 새로운 버전으로 갱신함</li>
+    </ul>
+  </li>
+  <li>커밋(Commit)
+    <ul>
+      <li>체크인을 수행할 때 이전에 갱신된 내용이 있는 경우에는 충돌(Conflict)을 알리고 diff 도구를 이용해 수정한 후 갱신을 완료함</li>
+    </ul>
+  </li>
+  <li>동기화(Update)
+    <ul>
+      <li>저장소에 있는 최신 버전으로 자신의 작업 공간을 동기화함</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="4-소프트웨어-버전-등록-과정">4. 소프트웨어 버전 등록 과정</h4>
+
+<ol>
+  <li>가져오기(Import)
+    <ol>
+      <li>개발자가 저장소에 신규로 파일을 추가함</li>
+    </ol>
+  </li>
+  <li>인출(Check-Out)
+    <ol>
+      <li>수정 작업을 진행할 개발자가 저장소에 추가된 파일을 자신의 작업 공간으로 인출함</li>
+    </ol>
+  </li>
+  <li>예치(Commit)
+    <ol>
+      <li>인출한 파일을 수정한 후 설명을 붙여 저장소에 예치함</li>
+    </ol>
+  </li>
+  <li>동기화(Update)
+    <ol>
+      <li>커밋 후 새로운 개발자가 자신의 작업 공간을 동기화함. 이때 기존 개발자가 추가했던 파일이 전달됨</li>
+    </ol>
+  </li>
+  <li>차이(Diff)
+    <ol>
+      <li>새로운 개발자가 추가된 파일의 수정 기록을 확인하면서 이전 개발자가 처음 추가한 파일과 이후 변경된 파일의 차이를 확인함</li>
+    </ol>
+  </li>
+</ol>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/08/31/theory196.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

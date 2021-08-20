@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>암호 알고리즘 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="암호 알고리즘" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 암호 알고리즘" />
+<meta property="og:description" content="1. 암호 알고리즘" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/07/22/theory142.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/07/22/theory142.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-22T13:53:22-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/07/22/theory142.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/07/22/theory142.html"},"headline":"암호 알고리즘","dateModified":"2021-07-22T13:53:22-05:00","datePublished":"2021-07-22T13:53:22-05:00","description":"1. 암호 알고리즘","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">암호 알고리즘</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-07-22T13:53:22-05:00" itemprop="datePublished">
+        Jul 22, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-암호-알고리즘">1. 암호 알고리즘</h4>
+
+<ul>
+  <li>패스워드, 주민번호, 은행계좌와 같은 중요 정보를 보호하기 위해 평문을 암호화된 문장으로 만드는 절차 또는 방법을 의미</li>
+  <li>암호 방식 분류</li>
+</ul>
+
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gt71zc5du5j30m806qq3e.jpg" alt="스크린샷 2021-08-06 오후 3.29.41" /></p>
+
+<h4 id="2-개인키-암호화private-key-encryption-기법">2. 개인키 암호화(Private Key Encryption) 기법</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">동일한 키로 데이터를 암호화하고 복호화하는 암호화 기법</code>임</li>
+  <li>대칭 암호 기법 또는 단일키 암호화 기법이라고도 함</li>
+  <li>암호화/복호화 속도가 빠르지만, 관리해야 할 키의 수가 많음</li>
+  <li>종류
+    <ul>
+      <li>스트림 암호 방식
+        <ul>
+          <li>평문과 동일한 길이의 스트림을 생성하여 비트 단위로 암호화하는 방식</li>
+          <li>종류: LFSR, RC4</li>
+        </ul>
+      </li>
+      <li>블록 암호화 방식
+        <ul>
+          <li>한 번에 하나의 데이터 블록을 암호화하는 방식</li>
+          <li>종류: DES, SEED, AES, ARIA</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="3-공개키-암호화public-key-encryption-기법">3. 공개키 암호화(Public Key Encryption) 기법</h4>
+
+<ul>
+  <li>데이터를 <code class="language-plaintext highlighter-rouge">암호화할 때 사용하는 공개키는 사용자에게 공개하고, 복호화할 때의 비밀키는 관리자가 비밀리에 관리하는 암호화 기법</code></li>
+  <li>비대칭 암호 기법이라고도 함</li>
+  <li>관리해야 할 키의 수가 적지만, 암호화/복호화 속도가 느림</li>
+  <li>대표적으로는 RSA(Rivest Shamir Adleman) 기법이 있음</li>
+</ul>
+
+<h4 id="4-양방향-알고리즘의-종류">4. 양방향 알고리즘의 종류</h4>
+
+<ul>
+  <li>SEED
+    <ul>
+      <li>1999년 한국인터넷진흥원에서 개발한 블록 암호화 알고리즘</li>
+      <li>블록 크기는 128비트이며, 키 길이에 따라 128, 256으로 분류됨</li>
+    </ul>
+  </li>
+  <li>ARIA(Academy, Research Institute, Agency)
+    <ul>
+      <li>2004년 국가정보원과 산학연협회가 개발한 블록 암호화 알고리즘</li>
+    </ul>
+  </li>
+  <li>DES(Data Encryption Standard)
+    <ul>
+      <li>1975년 미국 NBS에서 발표한 개인키 암호화 알고리즘</li>
+      <li>DES를 3번 적용하여 보안을 더욱 강화한 3DES(Triple DES)도 있음</li>
+    </ul>
+  </li>
+  <li>AES(Advanced Encryption Standard)
+    <ul>
+      <li>2001년 미국 표준 기술 연구소(NIST)에서 발표한 개인키 암호화 알고리즘</li>
+      <li>DES의 한계를 느낀 NIST에서 공모한 후 발표</li>
+    </ul>
+  </li>
+  <li>RSA(Rivest Shamir Adleman)
+    <ul>
+      <li>1978년 MIT의 라이베스트, 샤미르, 애들먼에 의해 제안된 공개키 암호화 알고리즘</li>
+      <li>큰 숫자를 소인수분해 하기 어렵다는 것에 기반하여 만들어짐</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="5-해시hash">5. 해시(Hash)</h4>
+
+<ul>
+  <li>임의의 길이의 입력 데이터나 메시지를 고정된 길이의 값이나 키로 변환하는 것을 의미</li>
+  <li>해시 알고리즘을 해시 함수라고 부르며, 해시 함수로 변환된 값이나 키를 해시값 또는 해시키라고 부름</li>
+  <li>데이터의 암호화, 무결성 검증을 위해 사용될 뿐만 아니라 정보보호의 다양한 분야에서 활용됨</li>
+  <li>해시 함수의 종류
+    <ul>
+      <li>SHA 시리즈
+        <ul>
+          <li>1993년 미국 국가안보국이 설계, 미국 국립표준기술연구소에 의해 발표됨</li>
+          <li>초기 개발된 SHA-0 이후 SHA-1이 발표되었고, 다시 SHA-2라고 불리는 SHA-224, SHA-256, SHA-384, SHA-512가 발표됨</li>
+        </ul>
+      </li>
+      <li>MD5(Message Digest algorithm 5)
+        <ul>
+          <li>1991년 R.Rivest가 MD4를 대체하기 위해 고안한 암호화 해시 함수</li>
+          <li>블록 크기가 512비트이며, 키 길이는 128비트임</li>
+        </ul>
+      </li>
+      <li>N-NASH
+        <ul>
+          <li>1989년 일본의 전신전화주식회사에서 발표한 암호화 해시 함수</li>
+          <li>블록 크기와 키 길이가 모두 128비트임</li>
+        </ul>
+      </li>
+      <li>SNEFRU
+        <ul>
+          <li>1990년 R.C.Merkle가 발표한 해시 함수</li>
+          <li>32비트 프로세서에서 구현을 용이하게 할 목적으로 개발됨</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/07/22/theory142.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
