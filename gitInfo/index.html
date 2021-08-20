@@ -4,17 +4,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Pages | Gang’s IT Blog</title>
+<title>gitInfo | Gang’s IT Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Pages" />
+<meta property="og:title" content="gitInfo" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://eunkyung99.github.io/gang/pages/" />
-<meta property="og:url" content="https://eunkyung99.github.io/gang/pages/" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/gitInfo/" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/gitInfo/" />
 <meta property="og:site_name" content="Gang’s IT Blog" />
 <script type="application/ld+json">
-{"url":"https://eunkyung99.github.io/gang/pages/","@type":"WebPage","headline":"Pages","description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
+{"url":"https://eunkyung99.github.io/gang/gitInfo/","@type":"WebPage","headline":"gitInfo","description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -61,23 +61,51 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/gitInfo/">gitInfo</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <img src="https://ghchart.rshah.org/Eunkyung99" alt="" style="width: 660px; height: 100px;">
+<div id="repos">
+<script>
+// 비동기 작업을 위해 async function 선언
+const initRepo = async () =>{
+        const _username = 'Eunkyung99'
+        
+        // 추가할 dom선택
+        const repoUl = document.getElementById("repos")
 
-  <header class="post-header">
-    <h1 class="post-title">Pages</h1>
-  </header>
+        // headers 설명 : 깃허브에 요청할 형식 지정
+        let response = await fetch('https://api.github.com/users/Eunkyung99/repos',
+        {headers:{
+            'Accept' : 'application/vnd.github.v3+json'
+        }});
+        const repoJson = await response.json()
+        // repo받아온 내용 확인
+        // console.log(repoJson);
 
-  <div class="post-content">
-    <h4 id="준비중입니다-">준비중입니다 :)</h4>
+        // json내용을 map을 이용해 각 dom을 만들고 추가
+        repoJson.map((repos)=>{
+            let h2Element = document.createElement("h2")
+            h2Element.textContent = repos.name
 
-  </div>
+            let pElementDesc = document.createElement("p")
+            pElementDesc.textContent = "레포설명 : " + repos.description
 
-</article>
+            let aElementURL = document.createElement("a")
+            aElementURL.href = repos.svn_url
+            aElementURL.textContent = repos.svn_url
+
+            //각 요소를 <div id="repos">에 추가
+            repoUl.append(h2Element)
+            repoUl.append(pElementDesc)
+            repoUl.append(aElementURL)
+            repoUl.append(document.createElement("br"))
+        })
+    }
+    initRepo()
+</script>
 
       </div>
     </main><footer class="site-footer h-card">
