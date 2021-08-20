@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>이상/함수적 종속 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="이상/함수적 종속" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 이상(Anomaly)" />
+<meta property="og:description" content="1. 이상(Anomaly)" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/04/14/theory44.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/04/14/theory44.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-14T09:15:23-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/04/14/theory44.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/04/14/theory44.html"},"headline":"이상/함수적 종속","dateModified":"2021-04-14T09:15:23-05:00","datePublished":"2021-04-14T09:15:23-05:00","description":"1. 이상(Anomaly)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">이상/함수적 종속</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-04-14T09:15:23-05:00" itemprop="datePublished">
+        Apr 14, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-이상anomaly">1. 이상(Anomaly)</h4>
+
+<ul>
+  <li>테이블에서 일부 속성들의 종속으로 인해 데이터의 중복이 발생하고, 이 중복으로 인해 테이블 조작 시 문제가 발생하는 현상을 의미함</li>
+  <li>이상의 종류에는 테이블 조작 중에 발생하는 <strong>삽입 이상, 삭제 이상, 갱신 이상</strong>이 있음</li>
+</ul>
+
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gs49gxh7vbj30ry0qgnpd.jpg" alt="스크린샷 2021-07-04 오전 2.11.48" style="zoom:50%;" /></p>
+
+<ul>
+  <li>
+    <p>삽입 이상(Insertion Anomaly): 테이블에 데이터를 삽입할 때 의도와는 상관 없이 원하지 않은 값들로 인해 삽입할 수 없게 되는 상황</p>
+
+    <blockquote>
+      <수강> 테이블에서 학번이 "600"인 학생의 학년이 "2"라는 사실만을 삽입하고자 하는 경우, 삽입 이상이 발생한다.
+-&gt; 수강 테이블의 기본키는 학번과 과목번호이기 때문에 삽입할 때 반드시 과목번호가 있어야 한다. 즉, 데이터가 발생되는 시점에는 과목번호가 필요 없지만 <수강> 테이블에 기록하고자 할 때 과목번호가 없어 등록할 수 없는 경우가 발생한다.
+</수강></수강>
+    </blockquote>
+  </li>
+  <li>
+    <p>삭제 이상(Deletion Anomaly): 테이블에서 한 튜플을 삭제할 때 의도하는 상관없는 값들도 함께 삭제되는, 즉 연쇄 삭제가 발생하는 현상임</p>
+
+    <blockquote>
+      <수강> 테이블에서 학번이 "200"인 학생이 과목번호 "C123"의 등록을 취소하고자 하는 경우 삭제 이상이 발생한다.
+
+학번이 "200"인 학생의 과목번호가 "C123"인 과목을 취소하고자 그 학생의 튜플을 삭제하면 학년 정보까지 같이 삭제된다. 과목만을 취소하고자 했지만 유지되어야 할 학년 정보까지 삭제되기 때문에 정보 손실이 발생한다.
+</수강>
+    </blockquote>
+  </li>
+  <li>
+    <p>갱신 이상(Update Anomaly): 테이블에서 튜플에 있는 속성의 값을 갱신할 때 일부 튜플의 정보만 갱신되어 정보에 불일치성이 생기는 현상임</p>
+
+    <blockquote>
+      <수강> 테이블에서 학번이 "400"인 학생의 학년을 "4"에서 "3"으로 변경하고자 하는 경우 갱신 이상이 발생할 수 있다.
+
+학번이 "400"인 모든 튜플의 학년 값을 갱신해야 하는데 실수로 일부 튜플만 갱신하면, 학번이 "400"인 학생의 학년은 "3"과 "4" 즉 2가지 값을 가지게 되어 정보에 불일치성이 생기게 됨
+</수강>
+    </blockquote>
+  </li>
+</ul>
+
+<h4 id="2-함수적-종속functional-dependency">2. 함수적 종속(Functional Dependency)</h4>
+
+<ul>
+  <li>어떤 테이블 R에서 X와 Y를 각각 R의 속성 집합의 부분 집합이라 하자. 속성 X의 값 각각에 대해 시간에 관계없이 항상 속성 Y의 값이 오직 하나만 연관되어 있을 때 Y는 X에 함수적 종속 또는 X가 Y를 함수적으로 결정한다고 하고, X-&gt;Y로 표기한다.</li>
+  <li>함수적 종속은 데이터의 의미를 표현하는 것으로, 현실 세계를 표현하는 제약 조건이 되는 동시에 데이터베이스에서 항상 유지되어야 할 조건이다.</li>
+</ul>
+
+<blockquote>
+  <p>다음의 <학생> 테이블에서 함수적 종속을 살펴보자.</학생></p>
+
+  <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gs4w13cauzj30rk0dke2k.jpg" alt="스크린샷 2021-07-04 오후 3.12.18" style="zoom:33%;" /></p>
+
+  <학생> 테이블에서 이름, 학년, 학과는 각각 학번 속성에 함수적 종속임. 이것을 기호로 표시하면 다음과 같음
+
+- 학번-&gt;이름, 학년, 학과
+
+- X-&gt;Y의 관계를 갖는 속성 X와 Y에서  X를 결정자라 하고, Y를 종속자라고 함. 예를 들어 학번-&gt;이름에서는 학번이 결정자이고, 이름이 종속자임
+
+다음의 <수강> 테이블에서 함수적 종속을 기호로 표시해 보자.
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gs4w56ydu2j30pi0q8hdt.jpg" alt="스크린샷 2021-07-04 오후 3.16.19" style="zoom:33%;" />
+
+- 학번, 과목번호-&gt;성적
+
+- 학번-&gt;학년
+
+- <수강> 테이블의 속성 중 성적은 (학번, 과목번호)에 완전 함수적 종속이라고 함
+- 반면에 <수강> 테이블의 속성 중 학년은 (학번, 과목번호)에 완전 함수적 종속이 아니므로 부분 함수적 종속이라고 함
+</수강></수강></수강></학생>
+</blockquote>
+
+<p>*완전 함수적 종속</p>
+
+<p>어떤 테이블 R에서 속성 Y가 다른 속성 집합 X 전체에 대해 함수적 종속이면서 속성 집합 X의 어떠한 진부분 집합 Z에도 함수적 종속이 아닐 때 속성 Y는 속성 집합 X에 완전 함수적 종속이라고 함</p>
+
+<p>*부분 함수적 종속</p>
+
+<p>어떤 테이블 R에서 속성 Y가 다른 속성 집합 X 전체에 대해 함수적 종속이면서 속성 집합 X의 임의의 진부분 집합에 대해 함수적 종속일 때, 속성 Y는 속성 집합 X에 부분 함수적 종속이라고 함</p>
+
+<p>*완전/부분적 함수 종속의 이해</p>
+
+<p>완전 함수적 종속이라는 말은 어떤 속성이 기본키에 대해 완전히 종속적일 때를 말함. 예를 들어 <수강> 테이블은 (학번, 과목번호)가 기본키인데, 성적은 학번과 과목번호가 같을 경우에는 항상 같은 성적이 오므로, 즉 성적은 학번과 과목번호에 의해서만 결정되므로 성적은 기본키(학번, 과목번호)에 완전 함수적 종속이 되는 것임. 반면에 학년은 과목번호에 관계없이 학번이 같으면 항상 같은 학년이 오므로, 즉 기본키의 일부인 학번에 의해서 학년이 결정되므로 학년은 부분 함수적 종속이라고 함.</수강></p>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/04/14/theory44.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>디자인 패턴 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="디자인 패턴" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 디자인 패턴" />
+<meta property="og:description" content="1. 디자인 패턴" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/05/19/theory79.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/05/19/theory79.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-19T12:31:23-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/05/19/theory79.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/05/19/theory79.html"},"headline":"디자인 패턴","dateModified":"2021-05-19T12:31:23-05:00","datePublished":"2021-05-19T12:31:23-05:00","description":"1. 디자인 패턴","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">디자인 패턴</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-05-19T12:31:23-05:00" itemprop="datePublished">
+        May 19, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-디자인-패턴">1. 디자인 패턴</h4>
+
+<ul>
+  <li>모듈 간의 관계 및 인터페이스를 설계할 때 참조할 수 있는 전형적인 해결 방식 또는 예제</li>
+  <li><code class="language-plaintext highlighter-rouge">문제 및 배경, 실제 적용된 사례, 재사용이 가능한 샘플 코드</code> 등으로 구성</li>
+  <li>‘바퀴를 다시 발명하지 마라’라는 말과 같이 개발 과정 중에 문제가 발생하면 새로 해결책을 구상하는 것보다 문제에 해당하는 디자인 패턴을 참고하여 적용하는 것이 더 효율적임</li>
+  <li>GOF의 디자인 패턴은 생성 패턴, 구조 패턴, 행위 패턴으로 구분됨</li>
+</ul>
+
+<h4 id="2-생성-패턴">2. 생성 패턴</h4>
+
+<ul>
+  <li><strong>클래스나 객체의 생성과 참조 과정을 정의</strong>하는 패턴</li>
+  <li><code class="language-plaintext highlighter-rouge">추상 팩토리</code>
+    <ul>
+      <li>구체적인 클래스에 의존하지 않고, <code class="language-plaintext highlighter-rouge">인터페이스를 통해 서로 연관.의존하는 객체들의 그룹으로 생성하여 추상적으로 표현</code></li>
+      <li>연관된 서브 클래스를 묶어 한 번에 교체하는 것이 가능함</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">빌더</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">작게 분리된 인스턴스를 건축하듯이 조합</code>하여 객체를 생성</li>
+      <li>객체의 생성 과정과 표현 방법을 분리하고 있어, 동일한 객체 생성에서도 서로 다른 결과를 만들어 낼 수 있음</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">팩토리 메소드</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">객체 생성을 서브 클래스에서 처리하도록 분리하여 캡슐화한 패턴</code></li>
+      <li>상위 클래스에서 인터페이스만 정의하고 실제 생성은 서브 클래스가 담당함</li>
+      <li>가상 생성자 패턴이라고도 함</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">프로토타입</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">원본 객체를 복제</code>하는 방법으로 객체를 생성하는 패턴</li>
+      <li>일반적인 방법으로 객체를 생성하며, 비용이 큰 경우 주로 이용함</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">싱글톤 </code>
+    <ul>
+      <li>하나의 객체를 생성하면 <code class="language-plaintext highlighter-rouge">생성된 객체를 어디서든 참조할 수 있지만, 여러 프로세스가 동시에 참조할 수는 없음</code></li>
+      <li>클래스 내에서 인스턴스가 하나뿐임을 보장하며, 불필요한 메모리 낭비를 최소화할 수 있음</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">추상 팩토리</code>는 서로 <code class="language-plaintext highlighter-rouge">다른 부품을 조립만 하는 조립 공장</code>, <code class="language-plaintext highlighter-rouge">빌더</code>는 <code class="language-plaintext highlighter-rouge">건축가각 블록을 조립</code>하는 모습, <code class="language-plaintext highlighter-rouge">팩토리 메소드</code>는 <code class="language-plaintext highlighter-rouge">부품부터 완성까지 통째로 찍어내는 공장</code>, <code class="language-plaintext highlighter-rouge">프로토타입</code>은 <code class="language-plaintext highlighter-rouge">원형을 두고 복제품을 만드는 것</code>, <code class="language-plaintext highlighter-rouge">싱글톤</code>은 식당에서 <code class="language-plaintext highlighter-rouge">누구나 사용할 수 있지만 하나뿐인 정수기</code>이다.</li>
+</ul>
+
+<h4 id="3-구조-패턴">3. 구조 패턴</h4>
+
+<ul>
+  <li>구조가 복잡한 시스템을 개발하기 쉽도록 <strong>클래스나 객체들을 조합하여 더 큰 구조로 만드는 패턴</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">어댑터</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">호환성이 없는 클래스들의 인터페이스를 다른 클래스가 이용할 수 있도록 변환</code>해주는 패턴</li>
+      <li>기존의 클래스를 이용하고 싶지만 인터페이스가 일치하지 않을 때 이용함</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">브리지</code>
+    <ul>
+      <li>구현부에서 추상층을 분리하여 <code class="language-plaintext highlighter-rouge">서로가 독립적으로 확장할 수 있도록 구성</code>한 패턴</li>
+      <li>기능과 구현을 <code class="language-plaintext highlighter-rouge">두 개의 별도 클래스로 구현</code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">컴포지트</code>
+    <ul>
+      <li>여러 객체를 가진 <code class="language-plaintext highlighter-rouge">복합 객체와 단일 객체를 구분 없이 다루고자 할 때 사용하는 패턴</code></li>
+      <li>객체들을 트리 구조로 구성하여 디렉터리 안에 디렉터리가 있듯이 <code class="language-plaintext highlighter-rouge">복합 객체 안에 복합 객체가 포함되는 구조 구현 가능</code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">데코레이터</code>
+    <ul>
+      <li>객체 간의 결합을 통해 <code class="language-plaintext highlighter-rouge">능동적으로 기능들을 확장할 수 있는 패턴</code></li>
+      <li>임의의 객체에 부가적인 기능을 추가하기 위해 <code class="language-plaintext highlighter-rouge">다른 객체들을 덧붙이는 방식</code>으로 구현</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">퍼싸드</code>
+    <ul>
+      <li>복잡한 서브 클래스들을 피해 더 <code class="language-plaintext highlighter-rouge">상위에 인터페이스를 구성</code>함으로써 서브 클래스들의 기능을 간편하게 사용할 수 있도록 하는 패턴</li>
+      <li>서브 클래스들 사이의 통합 인터페이스를 제공하는 Wrapper 객체가 필요</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">플라이웨이트</code>
+    <ul>
+      <li>인스턴스가 필요할 때마다 매번 생성하는 것이 아니고 <code class="language-plaintext highlighter-rouge">가능한 한 공유해서 사용함으로써 메모리를 절약</code>하는 패턴</li>
+      <li>다수의 유사 객체를 생성하거나 조작할 때 유용하게 사용할 수 있음</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">프록시</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">접근이 어려운 객체와 여기에 연결하려는 객체 사이에서 인터페이스 역할을 수행하는 패턴</code></li>
+      <li>네트워크 연결, 메모리의 대용량 객체로의 접근 등에 주로 이용</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">어댑터</code>는 전압을 맞춰주는 <code class="language-plaintext highlighter-rouge">변압기</code>, <code class="language-plaintext highlighter-rouge">브리지</code>는 두 섬을 연결하는 <code class="language-plaintext highlighter-rouge">다리</code>, <code class="language-plaintext highlighter-rouge">컴포지트</code>는 <code class="language-plaintext highlighter-rouge">폴더와 파일을 합성</code>한 것, <code class="language-plaintext highlighter-rouge">데코레이터</code>는 온갖 것으로 <code class="language-plaintext highlighter-rouge">장식된 눈사람</code>, <code class="language-plaintext highlighter-rouge">퍼싸드</code>는 <code class="language-plaintext highlighter-rouge">외부의 리모컨 버튼</code>만으로 복잡한 명령들을 간편하게 수행하는 것, <code class="language-plaintext highlighter-rouge">플라이웨이트</code>는 <code class="language-plaintext highlighter-rouge">부담을 가볍게 하기 위해 물품을 공유</code>하는 것, <code class="language-plaintext highlighter-rouge">프록시</code>는 내가 하기 어려운 법률업무를 대리해서 처리해주는 <code class="language-plaintext highlighter-rouge">변호사</code>이다.</li>
+</ul>
+
+<h4 id="4-행위-패턴">4. 행위 패턴</h4>
+
+<ul>
+  <li>클래스나 객체들이 <strong>서로 상호작용하는 방법이나 책임 분배 방법을 정의</strong>하는 패턴</li>
+  <li><code class="language-plaintext highlighter-rouge">책임 연쇄</code>
+    <ul>
+      <li>요청을 처리할 수 있는 <code class="language-plaintext highlighter-rouge">객체가 둘 이상 존재하여 한 객체가 처리하지 못하면 다음 객체로 넘어가는 형태</code>의 패턴</li>
+      <li>요청을 처리할 수 있는 각 객체들이 고리로 묶여 있어 <code class="language-plaintext highlighter-rouge">요청이 해결될 때까지 고리를 따라 책임이 넘어감 </code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">커맨드</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">요청을 객체의 형태로 캡슐화</code>하여 <code class="language-plaintext highlighter-rouge">재이용하거나 취소</code>할 수 있도록 요청에 필요한 정보를 저장하거나 로그에 남기는 패턴</li>
+      <li>요청에 사용되는 각종 명령어들을 추상 클래스와 구체 클래스로 분리하여 단순화함</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">인터프리터</code>
+    <ul>
+      <li>언어에 <code class="language-plaintext highlighter-rouge">문법 표현을 정의</code>하는 패턴</li>
+      <li>SQL이나 통신 프로토콜과 같은 것을 개발할 때 사용</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">반복자</code>
+    <ul>
+      <li>자료 구조와 같이 <code class="language-plaintext highlighter-rouge">접근이 잦은 객체에 대해 동일한 인터페이스를 사용</code>하도록 하는 패턴</li>
+      <li>내부 표현 방법의 노출 없이 순차적인 접근이 가능</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">중재자</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">수많은 객체들 간의 복잡한 상호작용을 캡슐화</code>하여 객체로 정의하는 패턴</li>
+      <li>객체 사이의 <code class="language-plaintext highlighter-rouge">의존성을 줄여 결합도를 감소</code>시킬 수 있음</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">메멘토</code>
+    <ul>
+      <li>특정 시점에서의 객체 내부 상태를 객체화함으로써 이후 요청에 따라 객체를 <code class="language-plaintext highlighter-rouge">해당 시점의 상태로 돌릴 수 있는 기능을 제공</code>하는 패턴</li>
+      <li>Ctrl+Z와 같은 되돌리기 기능을 개발할 때 주로 이용</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">옵서버</code>
+    <ul>
+      <li>한 객체의 <code class="language-plaintext highlighter-rouge">상태가 변화하면</code> 객체에 <code class="language-plaintext highlighter-rouge">상속되어 있는 다른 객체들에게 변화된 상태를 전달</code>하는 패턴</li>
+      <li>일대다의 의존성을 정의함</li>
+      <li>주로 <code class="language-plaintext highlighter-rouge">분산된 시스템 간에 이벤트를 생성.발행</code>하고, 이를 수신해야 할 때 이용</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">상태</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">객체의 상태에 따라 동일한 동작을 다르게 처리</code>해야 할 때 사용하는 패턴</li>
+      <li>객체 상태를 캡슐화하고 이를 참조하는 방식으로 처리</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">전략</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">동일한 계열의 알고리즘들을 개별적으로 캡슐화</code>하여 <code class="language-plaintext highlighter-rouge">상호 교환</code>할 수 있게 정의하는 패턴</li>
+      <li>클라이언트는 독립적으로 원하는 알고리즘을 선택하여 사용할 수 있으며, 클라이언트에 영향 없이 알고리즘의 변경이 가능함</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">템플릿 메소드</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">상위 클래스에서 골격을 정의</code>하고, <code class="language-plaintext highlighter-rouge">하위 클래스에서 세부 처리를 구체화</code>하는 구조의 패턴</li>
+      <li>유사한 서브 클래스를 묶어 공통된 내용을 상위 클래스에서 정의함으로써 코드의 양을 줄이고 유지보수를 용이하게 해줌</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">방문자</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">각 클래스들의 데이터 구조에서 처리 기능을 분리하여 별도의 클래스로 구성</code>하는 패턴</li>
+      <li><code class="language-plaintext highlighter-rouge">분리된 처리 기능은 각 클래스를 방문하여 수행함 </code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">책임 연쇄</code>는 위에서 쏟아지는 물을 여러 물받이가 연속해서 나눠 받는 <code class="language-plaintext highlighter-rouge">물레방아</code>, <code class="language-plaintext highlighter-rouge">커맨드</code>는 각종 <code class="language-plaintext highlighter-rouge">명령어를 하나로 합쳐둔 것</code>, <code class="language-plaintext highlighter-rouge">인터프리터</code>는 <code class="language-plaintext highlighter-rouge">언어 번역기</code>, <code class="language-plaintext highlighter-rouge">반복자</code>는 음악 파일의 다음 곡 재생처럼 같은 <code class="language-plaintext highlighter-rouge">명령어 반복</code>, <code class="language-plaintext highlighter-rouge">중재자</code>는 물품 예매를 <code class="language-plaintext highlighter-rouge">중개</code>해주는 인터넷 사이트, <code class="language-plaintext highlighter-rouge">메멘토</code>는 <code class="language-plaintext highlighter-rouge">기억 속의 그 때로 돌아가는 것</code>, <code class="language-plaintext highlighter-rouge">옵서버</code>는 <code class="language-plaintext highlighter-rouge">변화를 지켜보고 알려주는 것</code>, <code class="language-plaintext highlighter-rouge">상태</code>는 환자의 <code class="language-plaintext highlighter-rouge">상태에 따라 치료방법이 다른 것</code>, <code class="language-plaintext highlighter-rouge">전략</code>은 여러 전략들을 정하고 <code class="language-plaintext highlighter-rouge">필요할 때 원하는 전략을 선택</code>하여 쓰는 것, <code class="language-plaintext highlighter-rouge">템플릿 메소드</code>는 세모, 네모, 동그라미를 그리는 방법들을 도형이라는 <code class="language-plaintext highlighter-rouge">하나의 큰 틀로 묶는 것</code>, <code class="language-plaintext highlighter-rouge">방문자</code>는 책을 만들기 위해 저자, 편집자, 홍보팀을 <code class="language-plaintext highlighter-rouge">번갈아가며 방문</code>하는 것이다.</li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/05/19/theory79.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>소프트웨어 개발 표준 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="소프트웨어 개발 표준" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 소프트웨어 개발 표준" />
+<meta property="og:description" content="1. 소프트웨어 개발 표준" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/03/28/theory28.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/03/28/theory28.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-28T13:27:22-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/03/28/theory28.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/03/28/theory28.html"},"headline":"소프트웨어 개발 표준","dateModified":"2021-03-28T13:27:22-05:00","datePublished":"2021-03-28T13:27:22-05:00","description":"1. 소프트웨어 개발 표준","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">소프트웨어 개발 표준</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-03-28T13:27:22-05:00" itemprop="datePublished">
+        Mar 28, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-소프트웨어-개발-표준">1. 소프트웨어 개발 표준</h4>
+
+<ul>
+  <li>
+    <p>소프트웨어 개발 단계에서 수행하는 품질 관리에 사용되는 국제 표준을 의미</p>
+  </li>
+  <li>
+    <p>주요 소프트웨어 개발 표준</p>
+
+    <blockquote>
+      <p>ISO/IEC 12207</p>
+
+      <p>CMMI(능력 성숙도 통합 모델)</p>
+
+      <p>SPICE(소프트웨어 처리 개선 및 능력 평가 기준)</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h4 id="2-isoiec-12207">2. ISO/IEC 12207</h4>
+
+<ul>
+  <li>ISO(국제표준화기구)에서 만든 <strong>표준 소프트웨어 생명 주기 프로세스</strong>임</li>
+  <li>소프트웨어의 개발, 운영, 유지보수 등을 체계적으로 관리하기 위한 소프트웨어 생명 주기 표준 제공</li>
+  <li>구분(<strong>기본, 지원, 조직</strong>)
+    <ul>
+      <li>기본 생명 주기 프로세스: 획득, 공급, 개발, 운영, 유지보수 프로세스</li>
+      <li>지원 생명 주기 프로세스: 품질 보증, 검증, 확인, 활동 검토, 감사, 문서화, 형상 관리, 문제 해결 프로세스</li>
+      <li>조직 생명 주기 프로세스: 관리, 기반 구조, 훈련, 개선 프로세스</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="3-cmmicapability-maturity-model-integration">3. CMMI(Capability Maturity Model Integration)</h4>
+
+<ul>
+  <li>소프트웨어 <strong>개발 조직의 업무 능력 및 조직의 성숙도를 평가</strong>하는 모델</li>
+  <li><code class="language-plaintext highlighter-rouge">성숙도 단계</code>: 초기, 관리, 정의, 정량적 관리, 최적화
+    <ul>
+      <li><strong>초기</strong>: 정의된 프로세스 없음, 작업자 능력에 따라 성공 여부 결정</li>
+      <li><strong>관리</strong>: 규칙화된 프로세스, 특정한 프로젝트 내의 프로세스 정의 및 수행</li>
+      <li><strong>정의</strong>: 표준화된 프로세스, 조직의 표준 프로세스 활용하여 업무 수행</li>
+      <li><strong>정량적 관리</strong>: 예측 가능한 프로세스, 프로젝트를 정량적으로 관리 및 통제</li>
+      <li><strong>최적화</strong>: 지속적 개선 프로세스, 프로세스 역량 향상을 위해 지속적인 프로세스 개선</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="4-spicesoftware-process-improvement-and-capability-determination">4. SPICE(Software Process Improvement and Capability dEtermination)</h4>
+
+<ul>
+  <li>소프트웨어의 품질 및 생산성 향상을 위해 <strong>소프트웨어 프로세스를 평가 및 개선하는 국제 표준</strong></li>
+  <li>공식 명칭: ISO/IEC 15504</li>
+</ul>
+
+<h4 id="5-spice의-구성">5. SPICE의 구성</h4>
+
+<ul>
+  <li>고객-공급자 프로세스
+    <ul>
+      <li>소프트웨어를 개발하여 고객에게 전달하는 것을 지원</li>
+      <li>SW의 정확한 운용 및 사용을 위한 프로세스로 구성</li>
+      <li>구성 요소: 인수, 공급, 요구 도출, 운영</li>
+      <li>프로세스 수: 10개</li>
+    </ul>
+  </li>
+  <li>공학 프로세스
+    <ul>
+      <li>시스템과 소프트웨어 제품의 명세화, 구현, 유지보수를 하는데 사용되는 프로세스로 구성</li>
+      <li>구성 요소: 개발, 소프트웨어 유지보수</li>
+      <li>프로세스 수: 9개</li>
+    </ul>
+  </li>
+  <li>지원 프로세스
+    <ul>
+      <li>다른 프로세스에 의해 이용되는 프로세스로 구성</li>
+      <li>구성 요소: 문서화, 형상, 품질 보증, 검증, 확인, 리뷰, 감사, 품질 문제 해결</li>
+      <li>프로세스 수: 8개</li>
+    </ul>
+  </li>
+  <li>관리 프로세스
+    <ul>
+      <li>프로젝트 관리자에 의해 사용되는 프로세스로 구성</li>
+      <li>구성 요소: 관리, 프로젝트 관리, 품질 및 위험 관리</li>
+      <li>프로세스 수: 4개</li>
+    </ul>
+  </li>
+  <li>조직 프로세스
+    <ul>
+      <li>조직의 업무 목적 수립과 조직의 업무 목표 달성을 위한 프로세스로 구성</li>
+      <li>구성 요소: 조직 배치, 개선 활동 프로세스, 인력 관리, 기반 관리, 측정 도구, 재사용</li>
+      <li>프로세스 수: 9개</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="6-spice의-프로세스-수행-능력-단계">6. SPICE의 프로세스 수행 능력 단계</h4>
+
+<blockquote>
+  <p>불완전-수행-관리-확립-예측-최적화</p>
+</blockquote>
+
+<ul>
+  <li>불완전: 프로세스가 구현되지 않았거나 목적을 달성하지 못한 단계</li>
+  <li>수행: 프로세스가 수행되고 목적이 달성된 단계</li>
+  <li>관리: 정의된 자원의 한도 내에서 그 프로세스가 작업 산출물을 인도하는 단계</li>
+  <li>확립: 소프트웨어 공학 원칙에 기반하여 정의된 프로세스가 수행되는 단계</li>
+  <li>예측: 프로세스가 목적 달성을 위해 통제되고, 양적인 측정을 통해서 일관되게 수행되는 단계</li>
+  <li>최적화: 프로세스 수행을 최적화하고, 지속적인 개선을 통해 업무 목적을 만족시키는 단계</li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/03/28/theory28.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

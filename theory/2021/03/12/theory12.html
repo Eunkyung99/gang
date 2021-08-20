@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>UML-다이어그램 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="UML-다이어그램" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 다이어그램(Diagram)" />
+<meta property="og:description" content="1. 다이어그램(Diagram)" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/03/12/theory12.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/03/12/theory12.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-12T08:18:42-06:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/03/12/theory12.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/03/12/theory12.html"},"headline":"UML-다이어그램","dateModified":"2021-03-12T08:18:42-06:00","datePublished":"2021-03-12T08:18:42-06:00","description":"1. 다이어그램(Diagram)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">UML-다이어그램</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-03-12T08:18:42-06:00" itemprop="datePublished">
+        Mar 12, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-다이어그램diagram">1. 다이어그램(Diagram)</h4>
+
+<ul>
+  <li>사물과 관계를 도형으로 표현한 것</li>
+  <li>여러 관점에서 시스템을 가시화한 <strong>뷰</strong> 제공 -&gt; 의사소통에 도움</li>
+  <li>정적 모델링 - 구조적 다이어그램</li>
+  <li>동적 모델링 - 행위 다이어그램</li>
+</ul>
+
+<h4 id="2-구조적structural-다이어그램클객컴배복패">2. 구조적(Structural) 다이어그램(클객컴배복패)</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>클래스 다이어그램<br />(Class Diagram)</td>
+      <td>클래스와 클래스가 가지는 속성, 클래스 사이의 관계 표현</td>
+    </tr>
+    <tr>
+      <td>객체 다이어그램<br />(Object Diagram)</td>
+      <td>-클래스에 속한 사물(객체)들, 즉 인스턴스를 특정 시점의 <strong>객체와 객체 사이 관계</strong>로 표현<br />-럼바우(Rumbaugh) 객체지향 분석 기법에서 객체 모델링에 활용됨</td>
+    </tr>
+    <tr>
+      <td>컴포넌트 다이어그램<br />(Component Diagram)</td>
+      <td>-실제 구현 모듈인 <strong>컴포넌트 간의 관계나 컴포넌트 간의 인터페이스</strong> 표현<br />-구현 단계에서 사용</td>
+    </tr>
+    <tr>
+      <td>배치 다이어그램<br />(Deployment Diagram)</td>
+      <td>-결과물, 프로세스, 컴포넌트 등 <strong>물리적 요소들의 위치를 표현</strong><br />-구현 단계에서 사용</td>
+    </tr>
+    <tr>
+      <td>복합체 구조 다이어그램<br />(Composite Structure Diagram)</td>
+      <td>클래스나 컴포넌트가 복합 구조를 갖는 경우 그 내부 구조를 표현</td>
+    </tr>
+    <tr>
+      <td>패키지 다이어그램<br />(Package Diagram)</td>
+      <td>유스케이스나 클래스 등의 <strong>모델 요소들을 그룹화한 패키지들의 관계 표현</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="3-행위behavioral-다이어그램의-종류--동적유시커상활상타">3. 행위(Behavioral) 다이어그램의 종류 -동적(유시커상활상타)</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>유스케이스 다이어그램<br />(Use Case Diagram)</td>
+      <td>-사용자의 <strong>요구를 분석</strong>하는 것으로, <strong>기능 모델링 작업</strong>에 사용<br />-사용자(Actor)와 사용 사례(Use Case)로 구성</td>
+    </tr>
+    <tr>
+      <td>시퀀스 다이어그램<br />(Sequence Diagram)</td>
+      <td>상호 작용하는 시스템이나 객체들이 <strong>주고받는 메시지</strong>를 표현</td>
+    </tr>
+    <tr>
+      <td>커뮤니케이션 다이어그램<br />(Communication Diagram)</td>
+      <td>동작에 참여하는 객체들이 <strong>주고받는 메시지와 객체들 간의 연관 관계</strong>를 표현</td>
+    </tr>
+    <tr>
+      <td>상태 다이어그램<br />(State Diagram)</td>
+      <td>-하나의 객체가 자신이 속한 클래스의 상태 변화 혹은 다른 객체와의 <strong>상호 작용에 따라 상태가 어떻게 변화</strong>하는지 표현<br />-럼바우 객체지향 분석 기법에서 <strong>동적 모델링</strong>에 활용됨</td>
+    </tr>
+    <tr>
+      <td>활동 다이어그램<br />(Activity Diagram)</td>
+      <td>시스템이 어떤 기능을 수행하는지 객체의 처리 로직이나 <strong>조건에 따른 처리의 흐름을 순서에 따라 표현</strong></td>
+    </tr>
+    <tr>
+      <td>상호작용 개요 다이어그램<br />(Interaction Overview Diagram)</td>
+      <td>상호작용 다이어그램 간의 제어 흐름을 표현</td>
+    </tr>
+    <tr>
+      <td>타이밍 다이어그램<br />(Timing Diagram)</td>
+      <td>객체 <strong>상태 변화와 시간 제약</strong>을 명시적으로 표현</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="4-스테레오-타입stereotype">4. 스테레오 타입(Stereotype)</h4>
+
+<ul>
+  <li>
+    <p>UML에서 표현하는 기본 기능 외에 추가적인 기능을 표현하는 것</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">길러멧이라고 부르는 겹화살표(&lt;&lt;&gt;&gt;) 사이에 표현할 형태 기술</code></p>
+  </li>
+  <li>
+    <table>
+      <thead>
+        <tr>
+          <th>표현 형태</th>
+          <th>의미</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>«include»</td>
+          <td>연결된 다른 UML 요소에 대해 <strong>포함 관계</strong>에 있는 경우</td>
+        </tr>
+        <tr>
+          <td>«extend»</td>
+          <td>연결된 다른 UML 요소에 대해 <strong>확장 관계</strong>에 있는 경우</td>
+        </tr>
+        <tr>
+          <td>«interface»</td>
+          <td>인터페이스를 정의하는 경우</td>
+        </tr>
+        <tr>
+          <td>«exception»</td>
+          <td>예외를 정의하는 경우</td>
+        </tr>
+        <tr>
+          <td>«constructor»</td>
+          <td>생성자 역할을 수행하는 경우</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/03/12/theory12.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

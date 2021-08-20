@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>데이터베이스 개요 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="데이터베이스 개요" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 데이터저장소" />
+<meta property="og:description" content="1. 데이터저장소" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/04/04/theory34.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/04/04/theory34.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-04T08:10:29-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/04/04/theory34.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/04/04/theory34.html"},"headline":"데이터베이스 개요","dateModified":"2021-04-04T08:10:29-05:00","datePublished":"2021-04-04T08:10:29-05:00","description":"1. 데이터저장소","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">데이터베이스 개요</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-04-04T08:10:29-05:00" itemprop="datePublished">
+        Apr 4, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-데이터저장소">1. 데이터저장소</h4>
+
+<ul>
+  <li>데이터들을 논리적인 구조로 조직화하거나 물리적인 공간에 구축한 것</li>
+</ul>
+
+<blockquote>
+  <p>논리 데이터저장소: 데이터 및 데이터 간의 연관성, 제약조건을 식별하여 논리적인 구조로 조직화한 것</p>
+
+  <p>물리 데이터저장소: 논리 데이터저장소를 실제 저장장치에 저장한 것</p>
+</blockquote>
+
+<h4 id="2-데이터베이스database">2. 데이터베이스(Database)</h4>
+
+<ul>
+  <li>공동으로 사용될 <strong>데이터의 중복을 배제하여 통합</strong>하고, 쉽게 접근하여 처리할 수 있도록 <strong>저장장치에 저장하여 항상 사용</strong>할 수 있도록 운영하는 <strong>운영 데이터</strong></li>
+</ul>
+
+<ol>
+  <li>통합된 데이터(Integrated Data) : 자료의 중복을 배제한 데이터의 모임</li>
+  <li>저장된 데이터(Stored Data) : 컴퓨터가 접근할 수 있는 저장 매체에 저장된 자료</li>
+  <li>운영 데이터(Operated Data) : 조직의 고유한 업무를 수행하는 데 반드시 필요한 자료</li>
+  <li>공용 데이터(Shared Data) : 여러 응용 시스템들이 공동으로 소유하고 유지하는 자료</li>
+</ol>
+
+<h4 id="3-dbmsdatabase-management-system-데이터베이스-관리-시스템">3. DBMS(DataBase Management System; 데이터베이스 관리 시스템)</h4>
+
+<ul>
+  <li>사용자의 요구에 따라 <strong>정보를 생성</strong>해주고, <strong>데이터베이스를 관리</strong>해주는 <strong>소프트웨어</strong></li>
+  <li>
+    <p>기존의 파일 시스템이 갖는 데이터의 <strong>종속성</strong>과 <strong>중복성</strong>의 문제 해결 가능</p>
+  </li>
+  <li>
+    <p>필수 기능</p>
+
+    <ol>
+      <li>
+        <p>정의(Definition) 기능</p>
+
+        <p>데이터의 형과 구조에 대한 정의, 이용 방식, 제약 조건 등 명시</p>
+      </li>
+      <li>
+        <p>조작(Manipulation) 기능</p>
+
+        <p>데이터 검색, 갱신, 삽입, 삭제 인터페이스 제공</p>
+      </li>
+      <li>
+        <p>제어(Control) 기능</p>
+
+        <p>데이터의 무결성, 보안, 권한 검사, 병행 제어 제공</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="4-데이터의-독립성">4. 데이터의 독립성</h4>
+
+<ul>
+  <li>논리적 독립성
+    <ul>
+      <li>응용 프로그램과 데이터베이스 독립시킴</li>
+      <li>데이터의 논리적 구조를 변경해도 응용 프로그램은 영향 받지 않음</li>
+    </ul>
+  </li>
+  <li>물리적 독립성
+    <ul>
+      <li>응용 프로그램과 물리적 장치 독립시킴</li>
+      <li>디스크를 추가/변경하더라도 응용 프로그램은 영향 받지 않음</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="5-스키마schema">5. 스키마(Schema)</h4>
+
+<ul>
+  <li>데이터베이스의 구조와 제약조건에 관한 <strong>전반적인 명세를 기술한 것</strong></li>
+</ul>
+
+<ol>
+  <li>
+    <p>외부 스키마</p>
+
+    <ol>
+      <li>사용자나 응용 프로그래머가 각 개인의 입장에서 필요로 하는 데이터베이스의 논리적 구조 정의한 것</li>
+    </ol>
+  </li>
+  <li>
+    <p>개념 스키마</p>
+
+    <ol>
+      <li>데이터베이스의 전체적인 논리적인 구조</li>
+      <li>모든 응용 프로그램이나 사용자들이 필요로 하는 데이터를 종합한 조직 전체의 데이터베이스로 하나만 존재</li>
+    </ol>
+  </li>
+  <li>
+    <p>내부 스키마</p>
+
+    <ol>
+      <li>
+        <p>물리적 저장장치의 입장에서 본 데이터베이스 구조</p>
+      </li>
+      <li>
+        <p>실제로 저장될 레코드의 형식, 저장 데이터 항목의 표현 방법, 내부 레코드의 물리적 순서 등 나타냄</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/04/04/theory34.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

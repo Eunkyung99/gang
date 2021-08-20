@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>소프트웨어 개발 방법론 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="소프트웨어 개발 방법론" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 소프트웨어 개발 방법론" />
+<meta property="og:description" content="1. 소프트웨어 개발 방법론" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/03/20/theory20.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/03/20/theory20.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-20T09:28:42-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/03/20/theory20.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/03/20/theory20.html"},"headline":"소프트웨어 개발 방법론","dateModified":"2021-03-20T09:28:42-05:00","datePublished":"2021-03-20T09:28:42-05:00","description":"1. 소프트웨어 개발 방법론","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">소프트웨어 개발 방법론</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-03-20T09:28:42-05:00" itemprop="datePublished">
+        Mar 20, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-소프트웨어-개발-방법론">1. 소프트웨어 개발 방법론</h4>
+
+<ul>
+  <li>
+    <p>소프트웨어 <strong>개발, 유지보수 등에 필요한</strong> 여러 가지 일들의 <strong>수행 방법</strong>과 이러한 일들을 효율적으로 수행하려는 과정에서 필요한 <strong>각종 기법 및 도구를 체계적으로 정리하여 표준화</strong>한 것</p>
+  </li>
+  <li>목적: <code class="language-plaintext highlighter-rouge">소프트웨어의 생산성과 품질 향상</code></li>
+  <li>주요 소프트웨어 개발 방법론
+    <ul>
+      <li>구조적 방법론</li>
+      <li>정보공학 방법론</li>
+      <li>객체지향 방법론</li>
+      <li>컴포넌트 기반(CBD) 방법론</li>
+      <li>제품 계열 방법론</li>
+      <li><a href="#./2021-03-01-theory1.md">애자일 방법론</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="2-구조적-방법론">2. 구조적 방법론</h4>
+
+<ul>
+  <li>정형화된 분석 절차에 따라 <strong>사용자 요구사항을 파악하여 문서화하는</strong> <code class="language-plaintext highlighter-rouge">처리 중심의 방법론</code></li>
+  <li>1960년대까지 가장 많이 적용</li>
+  <li>쉬운 이해 및 검증이 가능한 프로그램 코드를 생성하는 것이 목적</li>
+  <li>복잡한 문제를 다루기 위해 <strong>분할과 정복 원리</strong> 적용</li>
+</ul>
+
+<blockquote>
+  <p>타당성 검토-&gt;계획-&gt;요구사항-&gt;설계-&gt;구현-&gt;시험-&gt;운용/유지보수</p>
+</blockquote>
+
+<h4 id="3-정보공학-방법론">3. 정보공학 방법론</h4>
+
+<ul>
+  <li>정보 시스템의 개발을 위해 <strong>계획, 분석, 설계, 구축에 정형화된 기법들을 통합 및 적용하는</strong> <code class="language-plaintext highlighter-rouge">자료 중심의 방법론</code></li>
+  <li>정보 시스템 개발 주기를 이용해 <strong>대규모 정보 시스템을 구축</strong>하는데 적합함</li>
+</ul>
+
+<blockquote>
+  <p>정보 전략 계획 수립-&gt;업무 영역 분석-&gt;업무 시스템 설계-&gt;업무 시스템 구축</p>
+</blockquote>
+
+<h4 id="4-객체지향-방법론">4. 객체지향 방법론</h4>
+
+<ul>
+  <li><strong>현실 세계의 개체(Entity)</strong>를 기계의 부품처럼 <strong>하나의 객체</strong>(Object)로 만들어 기계의 부품을 조립하듯이 <strong>객체들을 조립</strong>해서 필요한 소프트웨어를 구현하는 방법론</li>
+  <li>구조적 기법의 문제점으로 인한 소프트웨어 위기의 해결책으로 채택</li>
+  <li>구성 요소: <a href="#객체-클래스-메시지"><code class="language-plaintext highlighter-rouge">객체, 클래스, 메세지</code></a></li>
+  <li>기본 원칙: <a href="#캡슐화-정보은닉-추상화-상속성-다형성"><code class="language-plaintext highlighter-rouge">캡슐화, 정보 은닉, 추상화, 상속성, 다형성</code></a></li>
+</ul>
+
+<blockquote>
+  <p>요구 분석-&gt;설계-&gt;구현-&gt;테스트 및 검증-&gt;인도</p>
+</blockquote>
+
+<h4 id="5-컴포넌트-기반cbd-component-based-design-방법론">5. 컴포넌트 기반(CBD: Component Based Design) 방법론</h4>
+
+<ul>
+  <li>기존 시스템이나 소프트웨어를 구성하는 <strong>컴포넌트들을 조합</strong>하여 하나의 새로운 애플리케이션을 만드는 방법론</li>
+  <li>컴포넌트의 <code class="language-plaintext highlighter-rouge">재사용</code>이 가능-&gt;시간, 노력 절감</li>
+  <li>새로운 기능 간단하게 추가 가능 -&gt; <code class="language-plaintext highlighter-rouge">확장성</code> 보장</li>
+  <li>유지 보수 비용 최소화, 생산성 및 품질 향상</li>
+</ul>
+
+<blockquote>
+  <p>개발 준비-&gt;분석-&gt;설계-&gt;구현-&gt;테스트-&gt;전개-&gt;인도</p>
+</blockquote>
+
+<h4 id="6-제품-계열-방법론">6. 제품 계열 방법론</h4>
+
+<ul>
+  <li>특정 <strong>제품에 적용하고 싶은 공통된 기능을 정의</strong>하여 개발하는 방법론</li>
+  <li><strong>임베디드 소프트웨어</strong>를 만드는데 적합함
+    <ul>
+      <li><strong>영역 공학</strong>: 영역 분석, 영역 설계, 핵심 자산을 구현</li>
+      <li><strong>응용 공학</strong>: 제품 요구 분석, 제품 설계, 제품을 구현</li>
+    </ul>
+  </li>
+  <li>영역 공학과 응용 공학의 연계를 위해 제품의 요구사항, 아키텍처, 조립 생산이 필요</li>
+</ul>
+
+<h6 id="객체-클래스-메시지">객체, 클래스, 메시지</h6>
+
+<ul>
+  <li>객체: 데이터와 데이터를 처리하는 함수를 묶어 놓은 하나의 sw 모듈</li>
+  <li>클래스: 공통된 속성과 연산을 갖는 <strong>객체의 집합</strong>으로 객체의 일반적 타입</li>
+  <li>메시지: 객체들 간에 상호작용을 하는 데 사용되는 명령 또는 요구 사항</li>
+</ul>
+
+<h6 id="캡슐화-정보은닉-추상화-상속성-다형성">캡슐화, 정보은닉, 추상화, 상속성, 다형성</h6>
+
+<ul>
+  <li>캡슐화: 데이터와 데이터를 처리하는 <strong>함수를 하나로 묶는 것</strong></li>
+  <li>정보 은닉: 다른 객체에게 자신의 <strong>정보를 숨기고 자신의 연산만을 통해 접근을 허용</strong>하는 것</li>
+  <li>추상화: <strong>불필요한 부분을 생략</strong>하고 객체의 <strong>속성 중 가장 중요한 것에 중점</strong>을 두어 개략화하는 것</li>
+  <li>상속성: 이미 정의된 <strong>상위 클래스의 모든 속성과 연산을 하위 클래스가 물려받는 것</strong></li>
+  <li>다형성: 메시지에 의해 객체가 연산을 수행하게 될 때 <strong>하나의 메시지에 대해 각 객체가 가지고 있는 고유한 방법으로 응답할 수 있는 능력</strong></li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/03/20/theory20.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>정규화 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="정규화" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 정규화(Normalization)" />
+<meta property="og:description" content="1. 정규화(Normalization)" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/theory/2021/04/15/theory45.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/theory/2021/04/15/theory45.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-15T14:25:23-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/theory/2021/04/15/theory45.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/theory/2021/04/15/theory45.html"},"headline":"정규화","dateModified":"2021-04-15T14:25:23-05:00","datePublished":"2021-04-15T14:25:23-05:00","description":"1. 정규화(Normalization)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/pages/">Pages</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">정규화</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-04-15T14:25:23-05:00" itemprop="datePublished">
+        Apr 15, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#theory">theory</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-정규화normalization">1. 정규화(Normalization)</h4>
+
+<ul>
+  <li>테이블의 속성들이 상호 종속적인 관계를 갖는 특성을 이용하여 <strong>테이블을 무손실 분해하는 과정</strong></li>
+  <li>목적은 가능한 한 <code class="language-plaintext highlighter-rouge">중복을 제거</code>하여 삽입, 삭제, 갱신 이상의 발생 가능성을 줄이는 것</li>
+  <li>제 1정규형(1NF), 제 2정규형(2NF), 제 3정규형(3NF), BCNF, 제 4정규형(4NF), 제 5정규형(5NF)이 있으며, 순서대로 정규화의 정도가 높아짐</li>
+</ul>
+
+<h4 id="2-정규화-과정">2. 정규화 과정</h4>
+
+<p>아래의 <주문목록> 테이블을 가지고 정규화 과정을 살펴보자. <주문목록> 테이블의 기본키는 제품번호임</주문목록></주문목록></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gs4wm4ohwwj30oy09odu7.jpg" alt="스크린샷 2021-07-04 오후 3.32.34" style="zoom: 50%;" /></p>
+
+<ul>
+  <li>
+    <p>제 1정규형</p>
+
+    <ul>
+      <li>테이블 R에 속한 모든 속성의 <code class="language-plaintext highlighter-rouge">도메인이 원자 값만으로 되어 있는 정규형</code>임. 즉 테이블의 모든 속성 값이 원자 값으로만 되어 있는 정규형임</li>
+      <li>
+        <주문목록> 테이블에서는 하나의 제품에 대해 여러 개의 주문 관련 정보 (주문번호, 고객번호, 주소, 주문수량)가 발생하고 있음. 따라서 <주문목록> 테이블은 제 1정규형이 아님
+
+</주문목록></주문목록>
+      </li>
+    </ul>
+    <blockquote>
+      <주문목록> 테이블에서 반복되는 주문 관련 정보를 분리하여 제 1정규형으로 만드시오.
+</주문목록>
+    </blockquote>
+
+    <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gs4wp9jkamj30rg0nu4qp.jpg" alt="스크린샷 2021-07-04 오후 3.35.36" /></p>
+
+    <blockquote>
+      <주문목록> 테이블에서 반복되는 주문 관련 정보인 주문번호, 고객번호, 주소, 주문수량을 분리하면 위와 같이 제 1정규형인 <제품> 테이블과 <제품주문> 테이블이 만들어짐
+
+- 1차 정규화 과정으로 생성된 <제품주문> 테이블의 기본키는 (주문번호, 제품번호)이고, 다음과 같은 함수적 종속이 존재함
+- 주문번호, 제품번호 -&gt;고객번호, 주소, 주문수량
+- 주문번호-&gt;고객번호, 주소
+- 고객번호-&gt;주소
+</제품주문></제품주문></제품></주문목록>
+    </blockquote>
+  </li>
+  <li>
+    <p>2차 정규형</p>
+
+    <ul>
+      <li>테이블 R이 제 1정규형이고, <code class="language-plaintext highlighter-rouge">기본키가 아닌 모든 속성이 기본키에 대하여 완전 함수적 종속을 만족</code>하는 정규형임</li>
+      <li>
+        <주문목록> 테이블이 <제품> 테이블과 <제품주문> 테이블로 무손실 분해되면서 모두 제 1정규형이 되었지만 그 중 <제품주문> 테이블에는 기본키인 (주문번호, 제품번호)에 완전 함수적 종속이 되지 않는 속성이 존재함. 즉 주문수량은 기본키에 대해 완전 함수적 종속이지만 고객번호와 주소는 주문번호에 의해서도 결정될 수 있으므로, 기본키에 대해 완전 함수적 종속이 아님. 따라서 <제품주문> 테이블은 제 2정규형이 아님
+
+</제품주문></제품주문></제품주문></제품></주문목록>
+      </li>
+    </ul>
+    <blockquote>
+      <제품주문> 테이블에서 주문번호에 함수적 종속이 되는 속성들을 분리하여 제 2정규형을 만드시오.
+</제품주문>
+    </blockquote>
+
+    <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gs4wv7kgx5j30qs0qgnpd.jpg" alt="스크린샷 2021-07-04 오후 3.41.19" /></p>
+
+    <blockquote>
+      <제품주문> 테이블에서 주문번호에 함수적 종속이 되는 속성인 고객번호와 주소를 분리(즉 부분 함수적 종속성을 제거)해 내면 위와 같이 제 2정규형인 <주문 목록=""> 테이블과 <주문> 테이블로 무손실 분해됨.
+
+- 제 2정규화 과정을 거쳐 생성된 <주문> 테이블의 기본키는 주문번호임. 그리고 <주문> 테이블에는 아직도 다음과 같은 함수적 종속들이 존재함
+- 주문번호-&gt;고객번호, 주소
+- 고객번호-&gt;주소
+</주문></주문></주문></주문></제품주문>
+    </blockquote>
+  </li>
+  <li>
+    <p>제 3정규형</p>
+
+    <ul>
+      <li>테이블 R이 제 2정규형이고 기본키가 아닌 모든 속성이 기본키에 대해 <a href="#이행적-함수적-종속">이행적 함수적 종속</a>을 만족하지 않는 정규형임</li>
+      <li>
+        <제품주문> 테이블이 <주문목록> 테이블과 <주문> 테이블로 무손실 분해되면서 모두 제 2정규형이 되었음. 그러나 <주문> 테이블에서 고객번호가 주문번호에 함수적 종속이고, 주소가 고객번호에 함수적 종속이므로 주소는 기본키인 주문번호에 대해 이행적 함수적 종속을 만족함. 즉 주문번호-&gt;고객번호이고, 고객번호-&gt;주소이므로 주문번호-&gt;주소는 이행적 함수적 종속이 됨. 따라서 <주문> 테이블은 제 3정규형이 아님
+
+</주문></주문></주문></주문목록></제품주문>
+      </li>
+    </ul>
+    <blockquote>
+      <주문목록> 테이블에서 이행적 함수적 종속을 제거하여 제 3정규형을 만드시오.
+</주문목록>
+    </blockquote>
+
+    <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gs4x2qofjjj30mu0q6b08.jpg" alt="스크린샷 2021-07-04 오후 3.48.33" style="zoom:50%;" /></p>
+
+    <blockquote>
+      <주문> 테이블에서 이행적 함수적 종속(즉 주문번호-&gt;주소)을 제거하여 무손실 분해함으로써 위와 같이 제 3정규형인 <주문> 테이블과 <고객> 테이블이 생성됨
+</고객></주문></주문>
+    </blockquote>
+  </li>
+  <li>
+    <p>BCNF</p>
+
+    <ul>
+      <li>
+        <p>BCNF는 테이블 R에서 모든 결정자가 후보키인 정규형임</p>
+      </li>
+      <li>
+        <p>일반적으로 제 3정규형에 후보키가 여러 개 존재하고, 이러한 후보키들이 서로 중첩되어 나타나는 경우에 적용 가능함</p>
+      </li>
+      <li>
+        <p>아래의 <수강_교수> 테이블(제 3정규형)은 함수적 종속{(학번, 과목명)-&gt; 담당교수, (학번, 담당교수)-&gt;과목명, 담당교수-&gt;과목명}을 만족하고 있음. <수강_ 교수=""> 테이블의 후보키는 (학번, 과목명)과 (학번, 담당교수)임</수강_></수강_교수></p>
+      </li>
+      <li>
+        <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gs4x6nb9eaj30no0fge20.jpg" alt="스크린샷 2021-07-04 오후 3.52.18" /></p>
+      </li>
+      <li>
+        <수강_교수> 테이블에서 결정자 중 후보키가 아닌 속성이 존재함. 즉 함수적 종속 담당교수-&gt;과목명이 존재하는데, 담당교수가 <수강_교수> 테이블에서 후보키가 아니기 때문에 <수강교수> 테이블은 BCNF가 아님
+
+&gt; <수강_교수> 테이블에서 결정자가 후보키가 아닌 속성을 분리하여 BCNF를 만드시오.
+    
+![스크린샷 2021-07-04 오후 3.54.16](https://tva1.sinaimg.cn/large/008i3skNgy1gs4x8ox25ej30ng0cywxl.jpg)
+    
+&gt; <수강_교수> 테이블에서 BCNF를 만족하지 못하게 하는 속성(즉 담당교수-&gt;과목명)을 분리해내면 위와 같이 BCNF인 <수강> 테이블과 <교수> 테이블로 무손실 분해됨
+
+</교수></수강></수강_교수></수강_교수></수강교수></수강_교수></수강_교수>
+      </li>
+      <li>
+        <p>제 4정규형</p>
+
+        <ul>
+          <li>테이블 R에 다중 값 종속(MVD) A-&gt;-&gt;B가 존재할 경우 R의 모든 속성이 A에 함수적 종속 관계를 만족하는 정규형임</li>
+        </ul>
+      </li>
+      <li>
+        <p>제 5정규형</p>
+
+        <ul>
+          <li>테이블 R의 모든 조인 종속(JD)이 R의 후보키를 통해서만 성립되는 정규형임</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>[정규화 과정 정리]</strong></p>
+
+<p>비정규 릴레이션 –<strong>도</strong>메인이 원자값–&gt;</p>
+
+<p>1NF 				      –<strong>부</strong>분적 함수 종속 제거–&gt;</p>
+
+<p>2NF					   –<strong>이</strong>행적 함수 종속 제거–&gt;</p>
+
+<p>3NF					   –<strong>결</strong>정자이면서 후보키가 아닌 것 제거–&gt;</p>
+
+<p>BCNF			       –<strong>다</strong>치 종속 제거–&gt;</p>
+
+<p>4NF				      –<strong>조</strong>인 종속성 이용–&gt;</p>
+
+<p>5NF</p>
+
+<p>*암기 요령: 두부이걸다줘? (도부이결다조)</p>
+
+<h6 id="이행적-함수적-종속">이행적 함수적 종속</h6>
+
+<p>A-&gt;B이고 B-&gt;C일 때 A-&gt;C를 만족하는 관계를 이행적 함수적 종속이라고 함</p>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/theory/2021/04/15/theory45.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
