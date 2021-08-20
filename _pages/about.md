@@ -40,9 +40,9 @@ permalink: /about/
     - `php, HTML, javascript` 사용
 - 2020.11~2021.08 **[학부연구생 연구](https://www.notion.so/AI-Data-Study-c5d46d17e0f94f399690e4302aae18ca)** 진행(10개월)
 
-    -`압축 적용 Erasure coding` 성능 실험 
+    - `압축 적용 Erasure coding` 성능 실험 
 
-    -RISC-V VP 기반 CNN 딥러닝 가속기 시스템에서 `Object Detection 일부 구현` 
+    - RISC-V VP 기반 CNN 딥러닝 가속기 시스템에서 `Object Detection 일부 구현` 
 
 - [2021.01-2021.02 SJSU SVSTIP 해외교육](https://www.notion.so/Application-d4fee7f33268402fa960cb4a40799ee6)
     - 카페 추천 `앱 개발` 프로젝트
