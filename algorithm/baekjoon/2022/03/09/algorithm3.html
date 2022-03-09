@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>14503 로봇 청소기 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="14503 로봇 청소기" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 문제 설명" />
+<meta property="og:description" content="1. 문제 설명" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/algorithm/baekjoon/2022/03/09/algorithm3.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/algorithm/baekjoon/2022/03/09/algorithm3.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-03-09T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/algorithm/baekjoon/2022/03/09/algorithm3.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/algorithm/baekjoon/2022/03/09/algorithm3.html"},"headline":"14503 로봇 청소기","dateModified":"2022-03-09T00:00:00-06:00","datePublished":"2022-03-09T00:00:00-06:00","description":"1. 문제 설명","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/gitInfo/">gitInfo</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">14503 로봇 청소기</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-03-09T00:00:00-06:00" itemprop="datePublished">
+        Mar 9, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#algorithm">algorithm</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/gang/categories/#baekjoon">baekjoon</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-문제-설명">1. 문제 설명</h4>
+
+<p>로봇 청소기가 청소하는 영역의 개수를 구하는 프로그램을 작성하시오.</p>
+
+<p>로봇 청소기가 있는 장소는 N*M 크기의 직사각형으로 나타낼 수 있으며, 1x1 크기의 정사각형 칸으로 나누어져 있다. 각각의 칸은 벽 또는 빈 칸이다. 청소기는 바라보는 방향이 있으며, 이 방향은 동, 서, 남, 북 중 하나이다. 지도의 각 칸은 (r, c)로 나타낼 수 있고, r은 북쪽으로부터 떨어진 칸의 개수, c는 서쪽으로부터 떨어진 칸의 개수이다.</p>
+
+<p>로봇 청소기의 작동 원리</p>
+
+<ol>
+  <li>현재 위치를 청소한다</li>
+  <li>현재 위치에서 현재 방향을 기준으로 왼쪽 방향부터 차례대로 인접한 칸을 탐색한다.
+    <ol>
+      <li>왼쪽 방향에 아직 청소하지 않은 공간이 존재한다면, 그 방향으로 회전한 다음 한 칸을 전진하고 1번부터 진행한다.</li>
+      <li>왼쪽 방향에 청소할 공간이 없다면, 그 방향으로 회전하고 2번으로 돌아간다.</li>
+      <li>네 방향 모두 청소가 이미 되어있거나 벽인 경우에는 바라보는 방향을 유지한 채로 한 칸 후진을 하고 2번으로 돌아간다.</li>
+      <li>네 방향 모두 청소가 이미 되어있거나 벽이면서 뒤쪽 방향이 벽이라 후진도 할 수 없는 경우에는 작동을 멈춘다.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>로봇 청소기는 이미 청소되어 있는 칸을 또 청소하지 않으며, 벽을 통과할 수 없다.</p>
+
+<h4 id="2-입력">2. 입력</h4>
+
+<p>첫째 줄에 세로 크기 N과 가로 크기 M이 주어진다. (3 ≤ N, M ≤ 50)</p>
+
+<p>둘째 줄에 로봇 청소기가 있는 칸의 좌표 (r, c)와 바라보는 방향 d가 주어진다. d가 0인 경우에는 북쪽을, 1인 경우에는 동쪽을, 2인 경우에는 남쪽을, 3인 경우에는 서쪽을 바라보고 있는 것이다.</p>
+
+<p>셋째 줄부터 N개의 줄에 장소의 상태가 북쪽부터 남쪽 순서대로, 각 줄은 서쪽부터 동쪽 순서대로 주어진다. 빈 칸은 0, 벽은 1로 주어진다. 지도의 첫 행, 마지막 행, 첫 열, 마지막 열에 있는 모든 칸은 벽이다.</p>
+
+<p>로봇 청소기가 있는 칸의 상태는 항상 빈 칸이다.</p>
+
+<h4 id="3-출력">3. 출력</h4>
+
+<p>로봇 청소기가 청소하는 칸의 개수를 출력한다.</p>
+
+<h4 id="4-예제">4. 예제</h4>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h03j5kkxq1j20wa0i80tq.jpg" alt="스크린샷 2022-03-09 오후 1.43.57" /></p>
+
+<h4 id="5-접근법">5. 접근법</h4>
+
+<p>좌표와 방향 정보를 인수로 넘겨주면서 다음으로 이동할 칸을 탐색한다.</p>
+
+<p>탐색 순서는 규칙에 나와있는 내용을 구현하기만 하면 됨</p>
+
+<ul>
+  <li>왼쪽 방향으로 순환하며 이동할 수 있는 곳 탐색 -&gt; 존재하면 이동</li>
+  <li>4방향 다 돌고나면 후진 가능한지 체크 -&gt; 가능하면 후진</li>
+</ul>
+
+<h4 id="6-시간-복잡도">6. 시간 복잡도</h4>
+
+<p>O(N*M) 2500</p>
+
+<h4 id="7-공간-복잡도">7. 공간 복잡도</h4>
+
+<p>2500*int 배열 1개 &lt; 512MB</p>
+
+<h4 id="8-놓친-점">8. 놓친 점</h4>
+
+<p>다음으로 이동할 칸을 찾으면 return을 해주어야 하는데 그 부분을 작성하지 않아 재귀 스택이 쓸데없이 많이 쌓였고 예제 2번의 경우 오답이 나왔음.</p>
+
+<h4 id="9-기억할-것">9. 기억할 것</h4>
+
+<p>재귀 함수는 조건 미달 시 리턴해주는 것에 주의하자!</p>
+
+<h4 id="10-코드">10. 코드</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">room</span><span class="p">[</span><span class="mi">51</span><span class="p">][</span><span class="mi">51</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="n">dr</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">dc</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">cleaning</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">Clean</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">){</span>
+    <span class="c1">//현재 위치 청소</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">room</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="n">room</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//청소 표시</span>
+        <span class="n">cleaning</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">//왼쪽 방향 전환</span>
+        <span class="kt">int</span> <span class="n">nr</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">dr</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">nc</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="n">dc</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+        <span class="k">if</span><span class="p">((</span><span class="mi">0</span><span class="o">&lt;=</span><span class="n">nr</span> <span class="o">&amp;&amp;</span> <span class="n">nr</span><span class="o">&lt;</span><span class="n">N</span> <span class="o">&amp;&amp;</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">nc</span> <span class="o">&amp;&amp;</span> <span class="n">nc</span><span class="o">&lt;</span><span class="n">M</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">room</span><span class="p">[</span><span class="n">nr</span><span class="p">][</span><span class="n">nc</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+            <span class="n">Clean</span><span class="p">(</span><span class="n">nr</span><span class="p">,</span> <span class="n">nc</span><span class="p">,</span> <span class="n">d</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span> <span class="c1">//******* 방향을 찾으면 리턴해줘야 함!!!</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">//네 방향 모두 청소가 이미 되어 있거나 벽인 경우</span>
+    <span class="kt">int</span> <span class="n">backR</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">dr</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">backC</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="n">dc</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+    <span class="k">if</span><span class="p">((</span><span class="mi">0</span><span class="o">&lt;=</span><span class="n">backR</span> <span class="o">&amp;&amp;</span> <span class="n">backR</span><span class="o">&lt;</span><span class="n">N</span> <span class="o">&amp;&amp;</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">backC</span> <span class="o">&amp;&amp;</span> <span class="n">backC</span><span class="o">&lt;</span><span class="n">M</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">room</span><span class="p">[</span><span class="n">backR</span><span class="p">][</span><span class="n">backC</span><span class="p">]</span><span class="o">!=</span><span class="mi">1</span><span class="p">){</span>
+        <span class="n">Clean</span><span class="p">(</span><span class="n">backR</span><span class="p">,</span> <span class="n">backC</span><span class="p">,</span> <span class="n">d</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span> <span class="c1">//******* 방향을 찾으면 리턴해줘야 함!!!</span>
+    <span class="p">}</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
+
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">N</span> <span class="o">&gt;&gt;</span> <span class="n">M</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">r</span> <span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">&gt;&gt;</span> <span class="n">d</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">M</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">room</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">Clean</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">);</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">cleaning</span> <span class="o">&lt;&lt;</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="11-이전-풀이와-달라진-점개선">11. 이전 풀이와 달라진 점(개선)</h4>
+
+<ul>
+  <li>방향 전환을 이전에는 따로 함수로 구현 -&gt; 4 더하고 4로 나머지 연산함</li>
+  <li>visited 배열을 따로 둠 -&gt; 입력받는 room에 0과 1 아닌 2를 기록하며 방문 표시</li>
+  <li>후진하는 경우 함수를 다시 호출하지 않고 while 문을 통해 후진한 다음 만족하는 위치 찾을 때까지 돌도록 함(코드 더러움) -&gt; 조건 정리 코드에도 보이게 명료해짐</li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/algorithm/baekjoon/2022/03/09/algorithm3.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" target="_blank" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
