@@ -4,19 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>정렬1 K번째수 | Gang’s IT Blog</title>
+<title>DFS/BFS1 타겟 넘버 | Gang’s IT Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="정렬1 K번째수" />
+<meta property="og:title" content="DFS/BFS1 타겟 넘버" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="1. 문제 설명" />
 <meta property="og:description" content="1. 문제 설명" />
-<link rel="canonical" href="https://eunkyung99.github.io/gang/sort/programmers/2022/03/09/algorithm9.html" />
-<meta property="og:url" content="https://eunkyung99.github.io/gang/sort/programmers/2022/03/09/algorithm9.html" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/bfs/dfs/programmers/2022/03/12/algorithm12.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/bfs/dfs/programmers/2022/03/12/algorithm12.html" />
 <meta property="og:site_name" content="Gang’s IT Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-03-09T00:00:00-06:00" />
+<meta property="article:published_time" content="2022-03-12T00:00:00-06:00" />
 <script type="application/ld+json">
-{"url":"https://eunkyung99.github.io/gang/sort/programmers/2022/03/09/algorithm9.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/sort/programmers/2022/03/09/algorithm9.html"},"headline":"정렬1 K번째수","dateModified":"2022-03-09T00:00:00-06:00","datePublished":"2022-03-09T00:00:00-06:00","description":"1. 문제 설명","@context":"https://schema.org"}</script>
+{"url":"https://eunkyung99.github.io/gang/bfs/dfs/programmers/2022/03/12/algorithm12.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/bfs/dfs/programmers/2022/03/12/algorithm12.html"},"headline":"DFS/BFS1 타겟 넘버","dateModified":"2022-03-12T00:00:00-06:00","datePublished":"2022-03-12T00:00:00-06:00","description":"1. 문제 설명","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -71,8 +71,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">정렬1 K번째수</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-03-09T00:00:00-06:00" itemprop="datePublished">
-        Mar 9, 2022
+    <h1 class="post-title p-name" itemprop="name headline">DFS/BFS1 타겟 넘버</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-03-12T00:00:00-06:00" itemprop="datePublished">
+        Mar 12, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
     
@@ -84,7 +84,7 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/gang/categories/#sort">sort</a>
+        <a class="category-tags-link" href="/gang/categories/#Bfs/Dfs">Bfs/Dfs</a>
         &nbsp;
       
         <a class="category-tags-link" href="/gang/categories/#programmers">programmers</a>
@@ -98,69 +98,95 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <h4 id="1-문제-설명">1. 문제 설명</h4>
 
-<p>배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.</p>
+<p>n개의 음이 아닌 정수들이 있습니다. 이 정수들을 순서를 바꾸지 않고 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다. 예를 들어 [1, 1, 1, 1, 1]로 숫자 3을 만들려면 다음 다섯 방법을 쓸 수 있습니다.</p>
 
-<p>예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i = 2, j = 5, k = 3이라면</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1+1+1+1+1 = 3
++1-1+1+1+1 = 3
++1+1-1+1+1 = 3
++1+1+1-1+1 = 3
++1+1+1+1-1 = 3
+</code></pre></div></div>
 
-<ol>
-  <li>array의 2번째부터 5번째까지 자르면 [5, 2, 6, 3]입니다.</li>
-  <li>1에서 나온 배열을 정렬하면 [2, 3, 5, 6]입니다.</li>
-  <li>2에서 나온 배열의 3번째 숫자는 5입니다.</li>
-</ol>
-
-<p>배열 array, [i, j, k]를 원소로 가진 2차원 배열 commands가 매개변수로 주어질 때, commands의 모든 원소에 대해 앞서 설명한 연산을 적용했을 때 나온 결과를 배열에 담아 return 하도록 solution 함수를 작성해주세요.</p>
+<p>사용할 수 있는 숫자가 담긴 배열 numbers, 타겟 넘버 target이 매개변수로 주어질 때 숫자를 적절히 더하고 빼서 타겟 넘버를 만드는 방법의 수를 return 하도록 solution 함수를 작성해주세요.</p>
 
 <h5 id="제한사항">제한사항</h5>
 
 <ul>
-  <li>array의 길이는 1 이상 100 이하입니다.</li>
-  <li>array의 각 원소는 1 이상 100 이하입니다.</li>
-  <li>commands의 길이는 1 이상 50 이하입니다.</li>
-  <li>commands의 각 원소는 길이가 3입니다.</li>
+  <li>주어지는 숫자의 개수는 2개 이상 20개 이하입니다.</li>
+  <li>각 숫자는 1 이상 50 이하인 자연수입니다.</li>
+  <li>타겟 넘버는 1 이상 1000 이하인 자연수입니다.</li>
 </ul>
 
 <h4 id="2-입출력-및-예제">2. 입.출력 및 예제</h4>
 
+<h5 id="입출력-예">입출력 예</h5>
+
 <table>
   <thead>
     <tr>
-      <th>array</th>
-      <th>commands</th>
+      <th>numbers</th>
+      <th>target</th>
       <th>return</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>[1, 5, 2, 6, 3, 7, 4]</td>
-      <td>[[2, 5, 3], [4, 4, 1], [1, 7, 3]]</td>
-      <td>[5, 6, 3]</td>
+      <td>[1, 1, 1, 1, 1]</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>[4, 1, 2, 1]</td>
+      <td>4</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
 
 <h5 id="입출력-예-설명">입출력 예 설명</h5>
 
-<p>[1, 5, 2, 6, 3, 7, 4]를 2번째부터 5번째까지 자른 후 정렬합니다. [2, 3, 5, 6]의 세 번째 숫자는 5입니다.
-[1, 5, 2, 6, 3, 7, 4]를 4번째부터 4번째까지 자른 후 정렬합니다. [6]의 첫 번째 숫자는 6입니다.
-[1, 5, 2, 6, 3, 7, 4]를 1번째부터 7번째까지 자릅니다. [1, 2, 3, 4, 5, 6, 7]의 세 번째 숫자는 3입니다.</p>
+<p><strong>입출력 예 #1</strong></p>
+
+<p>문제 예시와 같습니다.</p>
+
+<p><strong>입출력 예 #2</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+4+1-2+1 = 4
++4-1+2-1 = 4
+</code></pre></div></div>
+
+<ul>
+  <li>총 2가지 방법이 있으므로, 2를 return 합니다.</li>
+</ul>
 
 <h4 id="3-접근법">3. 접근법</h4>
 
-<p>명령어마다 i, j, k 구하고 임시 벡터 tmp에 i~j 인덱스 범위의 값을 넣어줌</p>
+<p>가능한 연산은 더하기나 빼기만 가능</p>
 
-<p>임시 벡터 tmp 정렬 후 인덱스 k의 값  answer 배열에 넣어줌</p>
+<p>dfs 함수를 통해 계산할 인덱스와 누적결과를 넘겨준다.</p>
+
+<ul>
+  <li>dfs의 종료조건: 마지막 인덱스+1이 되었을 때
+    <ul>
+      <li>결과가 타겟 넘버가 되면 카운트</li>
+    </ul>
+  </li>
+  <li>현재 상황에서 더하는 경우의 재귀 호출과 빼는 경우의 재귀 호출 진행</li>
+</ul>
+
+<p>main 함수에서 dfs(0, 0)을 호출한다.</p>
 
 <h4 id="4-시간-복잡도">4. 시간 복잡도</h4>
 
-<p>O(N*K) 100 * 50</p>
+<p>O(2^N)</p>
 
 <h4 id="5-공간-복잡도">5. 공간 복잡도</h4>
 
-<p>int 벡터(최대 100) * 50개</p>
+<p>별도의 공간 필요 없음</p>
 
 <h4 id="6-놓친-점">6. 놓친 점</h4>
 
-<p>tmp에 원소를 넣고 tmp의 처음부터 끝까지 범위를 정렬해줘야 함(i~j를 정렬하려고 함) - 실수</p>
+<p>없음</p>
 
 <h4 id="7-기억할-것">7. 기억할 것</h4>
 
@@ -170,23 +196,29 @@ window.onload = wrap_img;
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
-#include &lt;algorithm&gt;
 </span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">commands</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">answer</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">v</span><span class="o">&lt;</span><span class="n">commands</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">v</span><span class="o">++</span><span class="p">){</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">tmp</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
-        <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="n">i</span><span class="p">;</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">j</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">){</span>
-            <span class="n">tmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
+<span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">result</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">t</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">idx</span> <span class="o">==</span> <span class="n">n</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="n">t</span><span class="p">){</span>
+            <span class="n">answer</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
         <span class="p">}</span>
-        <span class="n">sort</span><span class="p">(</span><span class="n">tmp</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">tmp</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-        <span class="n">answer</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="n">k</span><span class="p">]);</span>
+        <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
+        
+        <span class="c1">//+-*/</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">result</span> <span class="o">+</span> <span class="n">n</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">n</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">result</span> <span class="o">-</span> <span class="n">n</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">n</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+    
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="n">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">target</span><span class="p">);</span>
+    
     <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -199,7 +231,7 @@ window.onload = wrap_img;
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/gang/sort/programmers/2022/03/09/algorithm9.html" hidden></a>
+</script><a class="u-url" href="/gang/bfs/dfs/programmers/2022/03/12/algorithm12.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
