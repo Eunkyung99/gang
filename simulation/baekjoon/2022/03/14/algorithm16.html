@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>14890 경사로 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="14890 경사로" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 문제 설명" />
+<meta property="og:description" content="1. 문제 설명" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/simulation/baekjoon/2022/03/14/algorithm16.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/simulation/baekjoon/2022/03/14/algorithm16.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-03-14T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/simulation/baekjoon/2022/03/14/algorithm16.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/simulation/baekjoon/2022/03/14/algorithm16.html"},"headline":"14890 경사로","dateModified":"2022-03-14T00:00:00-05:00","datePublished":"2022-03-14T00:00:00-05:00","description":"1. 문제 설명","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/gitInfo/">gitInfo</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">14890 경사로</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-03-14T00:00:00-05:00" itemprop="datePublished">
+        Mar 14, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#simulation">simulation</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/gang/categories/#baekjoon">baekjoon</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-문제-설명">1. 문제 설명</h4>
+
+<p>크기가 N×N인 지도가 있다. 지도의 각 칸에는 그 곳의 높이가 적혀져 있다.</p>
+
+<p>오늘은 이 지도에서 지나갈 수 있는 길이 몇 개 있는지 알아보려고 한다. 길이란 한 행 또는 한 열 전부를 나타내며, 한쪽 끝에서 다른쪽 끝까지 지나가는 것이다.</p>
+
+<p>다음과 같은 N=6인 경우 지도를 살펴보자.</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h09zj29gxbj20gj0giq3j.jpg" alt="img" style="zoom:50%;" /></p>
+
+<p>이때, 길은 총 2N개가 있으며, 아래와 같다.</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h09zj0lw5ij20ir0iqn0m.jpg" alt="img" style="zoom:50%;" /></p>
+
+<p>길을 지나갈 수 있으려면 길에 속한 모든 칸의 높이가 모두 같아야 한다. 또는, 경사로를 놓아서 지나갈 수 있는 길을 만들 수 있다. 경사로는 높이가 항상 1이며, 길이는 L이다. 또, 개수는 매우 많아 부족할 일이 없다. 경사로는 낮은 칸과 높은 칸을 연결하며, 아래와 같은 조건을 만족해야한다.</p>
+
+<ul>
+  <li>경사로는 낮은 칸에 놓으며, L개의 연속된 칸에 경사로의 바닥이 모두 접해야 한다.</li>
+  <li>낮은 칸과 높은 칸의 높이 차이는 1이어야 한다.</li>
+  <li>경사로를 놓을 낮은 칸의 높이는 모두 같아야 하고, L개의 칸이 연속되어 있어야 한다.</li>
+</ul>
+
+<p>아래와 같은 경우에는 경사로를 놓을 수 없다.</p>
+
+<ul>
+  <li>경사로를 놓은 곳에 또 경사로를 놓는 경우</li>
+  <li>낮은 칸과 높은 칸의 높이 차이가 1이 아닌 경우</li>
+  <li>낮은 지점의 칸의 높이가 모두 같지 않거나, L개가 연속되지 않은 경우</li>
+  <li>경사로를 놓다가 범위를 벗어나는 경우</li>
+</ul>
+
+<p>L = 2인 경우에 경사로를 놓을 수 있는 경우를 그림으로 나타내면 아래와 같다.</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h09zj0vn5ij212605ymxn.jpg" alt="img" /></p>
+
+<p>경사로를 놓을 수 없는 경우는 아래와 같다.</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h09zj2uwicj21l008twfp.jpg" alt="img" /></p>
+
+<p>위의 그림의 가장 왼쪽부터 1번, 2번, 3번, 4번 예제라고 했을 때, 1번은 높이 차이가 1이 아니라서, 2번은 경사로를 바닥과 접하게 놓지 않아서, 3번은 겹쳐서 놓아서, 4번은 기울이게 놓아서 불가능한 경우이다.</p>
+
+<p>가장 위에 주어진 그림 예의 경우에 지나갈 수 있는 길은 파란색으로, 지나갈 수 없는 길은 빨간색으로 표시되어 있으며, 아래와 같다. 경사로의 길이 L = 2이다.</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h09zj1gn9cj20it0itwjx.jpg" alt="img" style="zoom:50%;" /></p>
+
+<p>지도가 주어졌을 때, 지나갈 수 있는 길의 개수를 구하는 프로그램을 작성하시오.</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h09zk9rypxj20lp0yb79r.jpg" alt="스크린샷 2022-03-15 오전 3.45.01" /></p>
+
+<h4 id="2-입력">2. 입력</h4>
+
+<p>첫째 줄에 N (2 ≤ N ≤ 100)과 L (1 ≤ L ≤ N)이 주어진다. 둘째 줄부터 N개의 줄에 지도가 주어진다. 각 칸의 높이는 10보다 작거나 같은 자연수이다.</p>
+
+<h4 id="3-출력">3. 출력</h4>
+
+<p>첫째 줄에 지나갈 수 있는 길의 개수를 출력한다.</p>
+
+<h4 id="4-예제">4. 예제</h4>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h09zjxp6vpj20vn0u0jt5.jpg" alt="스크린샷 2022-03-15 오전 3.44.47" /></p>
+
+<h4 id="5-접근법">5. 접근법</h4>
+
+<ul>
+  <li>findRow()와 findCol() 함수를 구현하여 가로/세로의 가능한 경로 개수를 더해서 답을 출력</li>
+  <li>findRow() 함수 구현
+    <ul>
+      <li>i를 0~N까지 돌며 해당 줄이 지나갈 수 있는 길인지 판단</li>
+      <li>lastJ 값은 경사로를 놓을 수 있는 가장 앞 인덱스를 저장함(0으로 초기화)</li>
+      <li>flag는 한 번 감소가 됐을 경우 그 이후에 경사로를 놓을 수 있는지 검사해야 하므로 한 번 감소한 상황을 표시</li>
+      <li>0~N-2까지 j 값을 변경하면서 j번째 열(왼쪽)과 j+1번째 열(오른쪽)을 비교
+        <ul>
+          <li>같다면
+            <ul>
+              <li>만약 flag이고(감소한 전적이 있다면) 오른쪽 - lastJ + 1이 L개가 되면 경사로를 놓아야 함</li>
+              <li>lastJ 값이 오른쪽+1(j+2)가 되고 flag false로 변경</li>
+            </ul>
+          </li>
+          <li>1 증가했다면
+            <ul>
+              <li>이전 L개에 경사로를 놓을 수 있는지 확인</li>
+              <li>왼쪽(j) - lastJ + 1이 L 이상이면 경사로를 놓을 수 있으므로 lastJ를 오른쪽(j+1)으로 설정하고 continue</li>
+              <li>경사로를 놓을 수 없으면 답이 될 수 없음(break)</li>
+            </ul>
+          </li>
+          <li>1 감소했다면
+            <ul>
+              <li>lastJ를 오른쪽(j+1)으로 설정하고 flag 값 on</li>
+              <li><strong>L이 1일 경우</strong> j+1에 경사로를 놓으면 되므로 lastJ를 j+2로 설정하고 flag는 false 유지</li>
+            </ul>
+          </li>
+          <li>이외(2 이상 차이) - 답이 될 수 없음</li>
+        </ul>
+      </li>
+      <li><strong>1 증가하거나 1 감소했을 때에도 flag 값을 검사</strong>해서 만약 켜져 있다면, 즉 이전에 감소했던 부분이 경사로 처리가 안 됐다면 답이 될 수 없음</li>
+      <li>열을 다 돌고 나서 flag 값이 꺼져 있고 답이 될 수 있으면 지나갈 수 있는 길이므로 count해준다.</li>
+    </ul>
+  </li>
+  <li>findCol() 역시 findRow()와 똑같이 구현 - i와 j만 바꿔주면 됨</li>
+</ul>
+
+<h4 id="6-시간-복잡도">6. 시간 복잡도</h4>
+
+<p>O(N^2) 20000 &lt; 2초</p>
+
+<h4 id="7-공간-복잡도">7. 공간 복잡도</h4>
+
+<p>int형 배열 10000 &lt; 512MB</p>
+
+<h4 id="8-놓친-점">8. 놓친 점</h4>
+
+<p>L이 1인 경우는 경사로를 바로 놓아줄 수 있음을 간과함 - 힌트를 보고 빨리 알았음</p>
+
+<h4 id="9-기억할-것">9. 기억할 것</h4>
+
+<p>예외가 없는지 잘 생각하고 구현하자. 조건 최대한 다 생각하고 검사하자.</p>
+
+<h4 id="10-코드">10. 코드</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">N</span><span class="p">,</span> <span class="n">L</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">road</span><span class="p">[</span><span class="mi">101</span><span class="p">][</span><span class="mi">101</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">findRow</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> 
+        <span class="kt">bool</span> <span class="n">canBeAnswer</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">//감소 체크해야 하는지 저장하는 flag</span>
+        <span class="kt">int</span> <span class="n">lastJ</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">flag</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span> <span class="o">-</span> <span class="n">lastJ</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">L</span><span class="p">)){</span>
+                    <span class="n">lastJ</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+                    <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]){</span> <span class="c1">//증가</span>
+                <span class="c1">//lastJ ~ j까지 경사로를 놓아야 함</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">){</span> <span class="c1">//감소하는 거 처리가 안 된 경우</span>
+                    <span class="n">canBeAnswer</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="n">lastJ</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="n">L</span><span class="p">){</span>
+                    <span class="n">lastJ</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> 
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span> <span class="c1">//경사로를 놓을 수 없는 경우</span>
+                    <span class="n">canBeAnswer</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]){</span> <span class="c1">//감소 2 3 3 3 2 2 2</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">){</span> <span class="c1">//감소하는거 처리가 안 된 경우</span>
+                    <span class="n">canBeAnswer</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">L</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">){</span> <span class="c1">//******</span>
+                    <span class="n">lastJ</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+                    <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span> <span class="c1">//*********** L이 1인 경우는 플래그 처리 필요 없이 j+1에 경사로 놓았다고 가정!!!</span>
+                    <span class="n">lastJ</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span> <span class="c1">//차이가 2 이상 나면 불가능</span>
+                <span class="n">canBeAnswer</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">flag</span> <span class="o">&amp;&amp;</span> <span class="n">canBeAnswer</span><span class="p">){</span>
+            <span class="n">answer</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">findCol</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span> 
+        <span class="kt">bool</span> <span class="n">canBeAnswer</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">lastI</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">flag</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="o">-</span> <span class="n">lastI</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">L</span><span class="p">)){</span>
+                    <span class="n">lastI</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+                    <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]){</span> 
+                <span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">){</span> 
+                    <span class="n">canBeAnswer</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">lastI</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="n">L</span><span class="p">){</span>
+                    <span class="n">lastI</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> 
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span> 
+                    <span class="n">canBeAnswer</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]){</span> 
+                <span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">){</span> 
+                    <span class="n">canBeAnswer</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">L</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">){</span> 
+                    <span class="n">lastI</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+                    <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span> 
+                    <span class="n">lastI</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span> 
+                <span class="n">canBeAnswer</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">flag</span> <span class="o">&amp;&amp;</span> <span class="n">canBeAnswer</span><span class="p">){</span>
+            <span class="n">answer</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">N</span> <span class="o">&gt;&gt;</span> <span class="n">L</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">road</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">findRow</span><span class="p">()</span> <span class="o">+</span> <span class="n">findCol</span><span class="p">()</span> <span class="o">&lt;&lt;</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="11-이전-풀이와-달라진-점개선">11. 이전 풀이와 달라진 점(개선)</h4>
+
+<ul>
+  <li>이전 풀이에서는 별도 배열을 2개 놓고(행/열 용) 실제로 경사로를 놓아가면서 검사했음 - 코드가 길어지고 처음인 경우 별도 처리해줌</li>
+  <li>lastJ에 경사로의 인덱스 값을 저장해주면서 코드가 간결해짐</li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/simulation/baekjoon/2022/03/14/algorithm16.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" target="_blank" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
