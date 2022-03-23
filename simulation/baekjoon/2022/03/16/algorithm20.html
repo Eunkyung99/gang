@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>15685 드래곤 커브 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="15685 드래곤 커브" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 문제 설명" />
+<meta property="og:description" content="1. 문제 설명" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/simulation/baekjoon/2022/03/16/algorithm20.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/simulation/baekjoon/2022/03/16/algorithm20.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-03-16T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/simulation/baekjoon/2022/03/16/algorithm20.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/simulation/baekjoon/2022/03/16/algorithm20.html"},"headline":"15685 드래곤 커브","dateModified":"2022-03-16T00:00:00-05:00","datePublished":"2022-03-16T00:00:00-05:00","description":"1. 문제 설명","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/gitInfo/">gitInfo</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">15685 드래곤 커브</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-03-16T00:00:00-05:00" itemprop="datePublished">
+        Mar 16, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#simulation">simulation</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/gang/categories/#baekjoon">baekjoon</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-문제-설명">1. 문제 설명</h4>
+
+<p>드래곤 커브는 다음과 같은 세 가지 속성으로 이루어져 있으며, 이차원 좌표 평면 위에서 정의된다. 좌표 평면의 x축은 → 방향, y축은 ↓ 방향이다.</p>
+
+<ol>
+  <li>시작 점</li>
+  <li>시작 방향</li>
+  <li>세대</li>
+</ol>
+
+<p>0세대 드래곤 커브는 아래 그림과 같은 길이가 1인 선분이다. 아래 그림은 (0, 0)에서 시작하고, 시작 방향은 오른쪽인 0세대 드래곤 커브이다.</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0k6r2o8gjj20ha04j0sn.jpg" alt="img" style="zoom:33%;" /></p>
+
+<p>1세대 드래곤 커브는 0세대 드래곤 커브를 끝 점을 기준으로 시계 방향으로 90도 회전시킨 다음 0세대 드래곤 커브의 끝 점에 붙인 것이다. 끝 점이란 시작 점에서 선분을 타고 이동했을 때, 가장 먼 거리에 있는 점을 의미한다.</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0k6r256caj20kw0gxt8u.jpg" alt="img" style="zoom:33%;" /></p>
+
+<p>2세대 드래곤 커브도 1세대를 만든 방법을 이용해서 만들 수 있다. (파란색 선분은 새로 추가된 선분을 나타낸다)</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0k6r3ubxdj20kw0r30t9.jpg" alt="img" style="zoom:33%;" /></p>
+
+<p>3세대 드래곤 커브도 2세대 드래곤 커브를 이용해 만들 수 있다. 아래 그림은 3세대 드래곤 커브이다.</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0k6r37mnrj21330skjsi.jpg" alt="img" style="zoom:33%;" /></p>
+
+<p>즉, K(K &gt; 1)세대 드래곤 커브는 K-1세대 드래곤 커브를 끝 점을 기준으로 90도 시계 방향 회전 시킨 다음, 그것을 끝 점에 붙인 것이다.</p>
+
+<p>크기가 100×100인 격자 위에 드래곤 커브가 N개 있다. 이때, 크기가 1×1인 정사각형의 네 꼭짓점이 모두 드래곤 커브의 일부인 정사각형의 개수를 구하는 프로그램을 작성하시오. 격자의 좌표는 (x, y)로 나타내며, 0 ≤ x ≤ 100, 0 ≤ y ≤ 100만 유효한 좌표이다.</p>
+
+<h4 id="2-입력">2. 입력</h4>
+
+<p>첫째 줄에 드래곤 커브의 개수 N(1 ≤ N ≤ 20)이 주어진다. 둘째 줄부터 N개의 줄에는 드래곤 커브의 정보가 주어진다. 드래곤 커브의 정보는 네 정수 x, y, d, g로 이루어져 있다. x와 y는 드래곤 커브의 시작 점, d는 시작 방향, g는 세대이다. (0 ≤ x, y ≤ 100, 0 ≤ d ≤ 3, 0 ≤ g ≤ 10)</p>
+
+<p>입력으로 주어지는 드래곤 커브는 격자 밖으로 벗어나지 않는다. 드래곤 커브는 서로 겹칠 수 있다.</p>
+
+<p>방향은 0, 1, 2, 3 중 하나이고, 다음을 의미한다.</p>
+
+<ul>
+  <li>0: x좌표가 증가하는 방향 (→)</li>
+  <li>1: y좌표가 감소하는 방향 (↑)</li>
+  <li>2: x좌표가 감소하는 방향 (←)</li>
+  <li>3: y좌표가 증가하는 방향 (↓)</li>
+</ul>
+
+<h4 id="3-출력">3. 출력</h4>
+
+<p>첫째 줄에 크기가 1×1인 정사각형의 네 꼭짓점이 모두 드래곤 커브의 일부인 것의 개수를 출력한다.</p>
+
+<h4 id="4-예제">4. 예제</h4>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0k6rxvks8j20wf0sjwg0.jpg" alt="스크린샷 2022-03-23 오후 11.30.18" /><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0k6seqbivj20w20fcdgz.jpg" alt="스크린샷 2022-03-23 오후 11.30.36" /></p>
+
+<h4 id="5-접근법">5. 접근법</h4>
+
+<p>드래곤 커브의 규칙 파악</p>
+
+<ul>
+  <li>0 세대는 직접 표기한다 (시작점 - 방향 기준으로)</li>
+  <li>각 세대별로 새로 추가되는 막대기의 방향을 벡터에 넣어준다
+    <ul>
+      <li>추가된 막대기 개수들의 역순으로 보면서 방향을 반시계 방향으로 돌리면 이번 세대에 추가하게 될 방향들이다</li>
+    </ul>
+  </li>
+  <li>벡터에 처음 정보부터 계속 추가하면서 세대를 반복할 수록 n(지금까지 추가된 막대기 개수)번째 들어온 것부터 1번째 들어온 것까지 탐색</li>
+</ul>
+
+<p>드래곤 커브의 꼭짓점을 기록했으므로 마지막에 (0~100, 0~100)까지 돌면서 정사각형이 다 1인 경우 카운트</p>
+
+<h4 id="6-시간-복잡도">6. 시간 복잡도</h4>
+
+<p>세대는 최대 10세대</p>
+
+<p>2^10 &lt;= 1초</p>
+
+<h4 id="7-공간-복잡도">7. 공간 복잡도</h4>
+
+<p>101*101 배열 &lt;= 512MB</p>
+
+<h4 id="8-놓친-점">8. 놓친 점</h4>
+
+<p>0세대는 들어가 있는 방향이 없으므로 처음에 별도로 처리 필요했음</p>
+
+<p>마지막 사각형 검사할 때 좌표의 범위가 0~99까지인 줄 알았지만 <strong>0~100까지였음</strong></p>
+
+<h4 id="9-기억할-것">9. 기억할 것</h4>
+
+<p>좌표 범위 잘 확인하기!</p>
+
+<h4 id="10-코드">10. 코드</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">board</span><span class="p">[</span><span class="mi">101</span><span class="p">][</span><span class="mi">101</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,};</span>
+<span class="kt">int</span> <span class="n">dr</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">dc</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">DragonCurve</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">,</span> <span class="kt">int</span> <span class="n">G</span><span class="p">){</span>
+    <span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">g</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">board</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">nr</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">dr</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">nc</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="n">dc</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+    <span class="n">board</span><span class="p">[</span><span class="n">nr</span><span class="p">][</span><span class="n">nc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//****** 0세대는 먼저 처리해줘야 함</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">((</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">4</span><span class="p">);</span> 
+
+    <span class="k">while</span><span class="p">(</span><span class="n">g</span> <span class="o">&lt;</span> <span class="n">G</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">){</span>
+            <span class="kt">int</span> <span class="n">dir</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="n">nr</span> <span class="o">+=</span> <span class="n">dr</span><span class="p">[</span><span class="n">dir</span><span class="p">];</span>
+            <span class="n">nc</span> <span class="o">+=</span> <span class="n">dc</span><span class="p">[</span><span class="n">dir</span><span class="p">];</span>
+            <span class="n">board</span><span class="p">[</span><span class="n">nr</span><span class="p">][</span><span class="n">nc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">((</span><span class="n">dir</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">4</span><span class="p">);</span> <span class="c1">//다음 방향 삽입</span>
+        <span class="p">}</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">N</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">N</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">g</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="n">d</span> <span class="o">&gt;&gt;</span> <span class="n">g</span><span class="p">;</span>
+        <span class="n">DragonCurve</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">g</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="c1">//********** 범위는 (100, 100) 까지임</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]){</span>
+                <span class="n">answer</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">answer</span> <span class="o">&lt;&lt;</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="11-이전-풀이와-달라진-점개선">11. 이전 풀이와 달라진 점(개선)</h4>
+
+<p>이전에는 dr, dc 배열을 선언하지 않고 하드코딩으로 구현하여 코드가 길어짐</p>
+
+<p>또 재귀 호출을 하여 불필요한 스택 사용이 있었던 것 같다 - 드래곤커브 함수 내에서 반복문을 통해 계산하도록 수정</p>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/simulation/baekjoon/2022/03/16/algorithm20.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" target="_blank" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
