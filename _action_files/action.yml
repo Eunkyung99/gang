@@ -15,3 +15,6 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+steps:
+  id: gcloud
+  uses: google-github-actions/setup-gcloud@master
