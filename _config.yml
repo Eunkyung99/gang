@@ -7,6 +7,7 @@
 # https://learnxinyminutes.com/docs/yaml/
 
 title: Gang's IT Blog
+email: kek9520@naver.com
 #description:  //하단에 표시됨
 github_username: Eunkyung99
 # you can comment the below line out if your repo name is not different than your baseurl
@@ -58,12 +59,42 @@ annotations: false
 show_tags: true
 
 # Add your Google Analytics ID here if you have one and want to use it
-google_analytics: 
+google_analytics: #UA—XXXXXXXX-X
+#catbook 추가
+permalink: /:year-:month/:title
+disqus_shortname: #disqus shortname
+
+user:
+  name: Catbook
+  pic: /assets/img/cat.jpg
+  picAlt: "catbook"
+  job: a category-centric theme
+  aboutme: true # comment this out if you don't need the 'about' page.
+
+defaults: #기본 설정*******
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      comments: true   
+
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+markdown: kramdown 
+
+# Filtering Content
+show_drafts: null
+limit_posts: 0
+future:      false
+unpublished: false
 
 exclude:
   - docker-compose.yml
   - action.yml
   - Makefile
+  - README.md
+  - LICENSE
+  - github
 
 # this setting allows you to keep pages organized in the _pages folder
 include:
