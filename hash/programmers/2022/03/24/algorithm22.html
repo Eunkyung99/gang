@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>해시3 위장 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="해시3 위장" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 문제 설명" />
+<meta property="og:description" content="1. 문제 설명" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/hash/programmers/2022/03/24/algorithm22.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/hash/programmers/2022/03/24/algorithm22.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-03-24T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/hash/programmers/2022/03/24/algorithm22.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/hash/programmers/2022/03/24/algorithm22.html"},"headline":"해시3 위장","dateModified":"2022-03-24T00:00:00-05:00","datePublished":"2022-03-24T00:00:00-05:00","description":"1. 문제 설명","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/gitInfo/">gitInfo</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">해시3 위장</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-03-24T00:00:00-05:00" itemprop="datePublished">
+        Mar 24, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#hash">hash</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/gang/categories/#programmers">programmers</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-문제-설명">1. 문제 설명</h4>
+
+<p>스파이들은 매일 다른 옷을 조합하여 입어 자신을 위장합니다.</p>
+
+<p>예를 들어 스파이가 가진 옷이 아래와 같고 오늘 스파이가 동그란 안경, 긴 코트, 파란색 티셔츠를 입었다면 다음날은 청바지를 추가로 입거나 동그란 안경 대신 검정 선글라스를 착용하거나 해야 합니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>이름</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>얼굴</td>
+      <td>동그란 안경, 검정 선글라스</td>
+    </tr>
+    <tr>
+      <td>상의</td>
+      <td>파란색 티셔츠</td>
+    </tr>
+    <tr>
+      <td>하의</td>
+      <td>청바지</td>
+    </tr>
+    <tr>
+      <td>겉옷</td>
+      <td>긴 코트</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>스파이가 가진 의상들이 담긴 2차원 배열 clothes가 주어질 때 서로 다른 옷의 조합의 수를 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h5 id="제한사항">제한사항</h5>
+
+<ul>
+  <li>clothes의 각 행은 [의상의 이름, 의상의 종류]로 이루어져 있습니다.</li>
+  <li>스파이가 가진 의상의 수는 1개 이상 30개 이하입니다.</li>
+  <li>같은 이름을 가진 의상은 존재하지 않습니다.</li>
+  <li>clothes의 모든 원소는 문자열로 이루어져 있습니다.</li>
+  <li>모든 문자열의 길이는 1 이상 20 이하인 자연수이고 알파벳 소문자 또는 ‘_’ 로만 이루어져 있습니다.</li>
+  <li>스파이는 하루에 최소 한 개의 의상은 입습니다.</li>
+</ul>
+
+<h4 id="2-입출력-및-예제">2. 입.출력 및 예제</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>clothes</th>
+      <th>return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[[“yellowhat”, “headgear”], [“bluesunglasses”, “eyewear”], [“green_turban”, “headgear”]]</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>[[“crowmask”, “face”], [“bluesunglasses”, “face”], [“smoky_makeup”, “face”]]</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="입출력-예-설명">입출력 예 설명</h5>
+
+<p>예제 #1
+headgear에 해당하는 의상이 yellow_hat, green_turban이고 eyewear에 해당하는 의상이 blue_sunglasses이므로 아래와 같이 5개의 조합이 가능합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. yellow_hat
+2. blue_sunglasses
+3. green_turban
+4. yellow_hat + blue_sunglasses
+5. green_turban + blue_sunglasses
+</code></pre></div></div>
+
+<p>예제 #2
+face에 해당하는 의상이 crow_mask, blue_sunglasses, smoky_makeup이므로 아래와 같이 3개의 조합이 가능합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. crow_mask
+2. blue_sunglasses
+3. smoky_makeup
+</code></pre></div></div>
+
+<h4 id="3-접근법">3. 접근법</h4>
+
+<p>해시 맵을 사용하여 각 종류별로 의상 개수를 센다.</p>
+
+<p>각 종류별로 아무것도 선택 안 하거나, 1개 선택하는 경우의 수 n개 존재</p>
+
+<p>-&gt; 종류별로 (n+1)을 곱한 값을 구한다</p>
+
+<p>모두 선택 안 하는 경우 1가지를 빼면 답이 된다.</p>
+
+<h4 id="4-시간-복잡도">4. 시간 복잡도</h4>
+
+<p>의상의 수 30</p>
+
+<h4 id="5-공간-복잡도">5. 공간 복잡도</h4>
+
+<p>unordered_map&lt;string, int&gt;</p>
+
+<h4 id="6-놓친-점">6. 놓친 점</h4>
+
+<p>문제 조건 이해를 잘 못 함 - 각 종류별로 최대 한 개만 선택할 수 있었음</p>
+
+<p>아무것도 선택 안 하는 경우의 수를 세주는 아이디어 - 블로그 참고함</p>
+
+<h4 id="7-기억할-것">7. 기억할 것</h4>
+
+<p>unordered_map에 삽입된 원소를 순회하는 방법</p>
+
+<p>for(auto i : um){</p>
+
+<p>​	//um의 원소는 pair임!!</p>
+
+<p>​	i.first, i.second로 접근 가능</p>
+
+<p>}</p>
+
+<h4 id="8-코드">8. 코드</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;unordered_map&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">clothes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unordered_map</span> <span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">um</span><span class="p">;</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">clothes</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">string</span> <span class="n">types</span> <span class="o">=</span> <span class="n">clothes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+        <span class="n">um</span><span class="p">[</span><span class="n">types</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">i</span><span class="o">:</span> <span class="n">um</span><span class="p">){</span> <span class="c1">//******** unordered_map 순회방법 i는 pair임</span>
+        <span class="n">answer</span> <span class="o">*=</span> <span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">second</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>  <span class="c1">//각 종류별 개수 + 1을 곱한다(안 입는 경우도 하나의 경우의 수로 추가)</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">//모두 안 입는 경우인 1가지 빼고 반환</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/hash/programmers/2022/03/24/algorithm22.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" target="_blank" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
