@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>17825 주사위 윷놀이 | Gang’s IT Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="17825 주사위 윷놀이" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. 문제 설명" />
+<meta property="og:description" content="1. 문제 설명" />
+<link rel="canonical" href="https://eunkyung99.github.io/gang/simulation/bruteforce/baekjoon/2022/04/06/algorithm35.html" />
+<meta property="og:url" content="https://eunkyung99.github.io/gang/simulation/bruteforce/baekjoon/2022/04/06/algorithm35.html" />
+<meta property="og:site_name" content="Gang’s IT Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-06T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://eunkyung99.github.io/gang/simulation/bruteforce/baekjoon/2022/04/06/algorithm35.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eunkyung99.github.io/gang/simulation/bruteforce/baekjoon/2022/04/06/algorithm35.html"},"headline":"17825 주사위 윷놀이","dateModified":"2022-04-06T00:00:00-05:00","datePublished":"2022-04-06T00:00:00-05:00","description":"1. 문제 설명","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eunkyung99.github.io/gang/feed.xml" title="Gang's IT Blog" /><link rel="shortcut icon" type="image/x-icon" href="/gang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gang/">Gang&#39;s IT Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gang/about/">About Me</a><a class="page-link" href="/gang/gitInfo/">gitInfo</a><a class="page-link" href="/gang/search/">Search</a><a class="page-link" href="/gang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">17825 주사위 윷놀이</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-04-06T00:00:00-05:00" itemprop="datePublished">
+        Apr 6, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/gang/categories/#simulation">simulation</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/gang/categories/#bruteforce">bruteforce</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/gang/categories/#baekjoon">baekjoon</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="1-문제-설명">1. 문제 설명</h4>
+
+<p>주사위 윷놀이는 다음과 같은 게임판에서 하는 게임이다.</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h1ppcnzoslj20wt0u0q5p.jpg" alt="img" /></p>
+
+<ul>
+  <li>처음에는 시작 칸에 말 4개가 있다.</li>
+  <li>말은 게임판에 그려진 화살표의 방향대로만 이동할 수 있다. 말이 파란색 칸에서 이동을 시작하면 파란색 화살표를 타야 하고, 이동하는 도중이거나 파란색이 아닌 칸에서 이동을 시작하면 빨간색 화살표를 타야 한다. 말이 도착 칸으로 이동하면 주사위에 나온 수와 관계 없이 이동을 마친다.</li>
+  <li>게임은 10개의 턴으로 이루어진다. 매 턴마다 1부터 5까지 한 면에 하나씩 적혀있는 5면체 주사위를 굴리고, 도착 칸에 있지 않은 말을 하나 골라 주사위에 나온 수만큼 이동시킨다.</li>
+  <li>말이 이동을 마치는 칸에 다른 말이 있으면 그 말은 고를 수 없다. 단, 이동을 마치는 칸이 도착 칸이면 고를 수 있다.</li>
+  <li>말이 이동을 마칠 때마다 칸에 적혀있는 수가 점수에 추가된다.</li>
+</ul>
+
+<p>주사위에서 나올 수 10개를 미리 알고 있을 때, 얻을 수 있는 점수의 최댓값을 구해보자.</p>
+
+<h4 id="2-입력">2. 입력</h4>
+
+<p>첫째 줄에 주사위에서 나올 수 10개가 순서대로 주어진다.</p>
+
+<h4 id="3-출력">3. 출력</h4>
+
+<p>얻을 수 있는 점수의 최댓값을 출력한다.</p>
+
+<h4 id="4-예제">4. 예제</h4>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h1ppd242c4j21ci0liq4t.jpg" alt="스크린샷 2022-04-28 오후 9.21.30" /></p>
+
+<h4 id="5-접근법">5. 접근법</h4>
+
+<ul>
+  <li>말이 이동하다가 꺾을 수 있는 방법은 3가지 -&gt; 4가지 루트를 만들어서 하드코딩한 맵을 선언</li>
+  <li>말이 도착을 할 때 넘어서서 도착할 수 있으므로 여유있게 맵 선언(+5칸)</li>
+  <li>말의 위치를 담는 구조체 정의 -&gt; 크기 4인 배열</li>
+  <li>for문을 돌면서 말 4개를 다 움직여봄(말이 이미 도착했으면 패스)
+    <ul>
+      <li>원본 위치를 따로 저장해두고 움직임</li>
+      <li>꺾어야 하는 칸에 도착하면 루트(nr)를 변경하도록 함</li>
+      <li>이동할 칸의 record 배열 값을 확인해서 값이 존재하는지 확인 -&gt; 존재하면 패스(다른 말이 있는 것!)</li>
+      <li>말의 위치 구조체 값을 변경하고, record 배열에 해당 말이 이동할 위치에 표시를 하고, DFS 함수 재귀 호출 -&gt; 다시 원상복귀(위치, record)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="6-시간-복잡도">6. 시간 복잡도</h4>
+
+<p>4^10 * 10 &lt; 2초</p>
+
+<h4 id="7-공간-복잡도">7. 공간 복잡도</h4>
+
+<p>4*30 int형 배열 2개</p>
+
+<h4 id="8-놓친-점">8. 놓친 점</h4>
+
+<ul>
+  <li><strong>하나의 칸에 유입할 수 있는 방법이 여러가지인 칸들이 존재!!(25, 30, 30, 35, 40) - 경로를 선으로 그려서 겹치는 부분 확인하자!!!!</strong>
+    <ul>
+      <li>또, 30의 경우 <code class="language-plaintext highlighter-rouge">여러 칸에 존재</code>했음 - 열 번호로 구분</li>
+      <li>여러 경로로 접근 가능했기 때문에 모든 경로의 해당 칸에 대해 record 값을 확인해서 말들이 확실히 그 칸에 없는지 검사했음</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="9-기억할-것">9. 기억할 것</h4>
+
+<ul>
+  <li><strong>for문을 돌면서 재귀호출을 할 때는, 이전 count의 기준으로 상태를 검사해야 함</strong> -&gt; record 배열</li>
+  <li>같은 숫자를 가진 칸이나, 겹치는 경로 등을 잘 생각해보자</li>
+</ul>
+
+<h4 id="10-코드">10. 코드</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">board</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="n">dice</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="nc">Horse</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">r</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">Horse</span> <span class="n">h</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">record</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">30</span><span class="p">];</span>
+
+<span class="kt">void</span> <span class="nf">DFS</span><span class="p">(</span><span class="kt">int</span> <span class="n">turn</span><span class="p">,</span> <span class="kt">int</span> <span class="n">score</span><span class="p">,</span> <span class="n">string</span> <span class="n">route</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">turn</span> <span class="o">==</span> <span class="mi">10</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">score</span> <span class="o">&gt;</span> <span class="n">ans</span><span class="p">){</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">score</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="c1">//말 4개를 모두 움직여 본다.</span>
+        <span class="kt">int</span> <span class="n">origR</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">origC</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nextR</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nextC</span> <span class="o">=</span> <span class="n">origC</span> <span class="o">+</span> <span class="n">dice</span><span class="p">[</span><span class="n">turn</span><span class="p">];</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">origR</span><span class="p">][</span><span class="n">origC</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span> <span class="k">continue</span><span class="p">;</span> <span class="p">}</span> <span class="c1">//이미 도착했을 경우 말 이동하지 않음</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">origR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">==</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="n">nextC</span> <span class="o">==</span> <span class="mi">5</span><span class="p">){</span> 
+            <span class="n">nextR</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//1번 루트로</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">origR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span> <span class="o">&amp;&amp;</span> <span class="n">nextC</span> <span class="o">==</span> <span class="mi">10</span><span class="p">){</span>
+            <span class="n">nextR</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//2번 루트로</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">origR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">==</span> <span class="mi">30</span> <span class="o">&amp;&amp;</span> <span class="n">nextC</span> <span class="o">==</span> <span class="mi">15</span><span class="p">){</span> <span class="c1">//********** 30 여러 개 존재</span>
+            <span class="n">nextR</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">//3번 루트로</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">nextR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">==</span> <span class="mi">25</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">9</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">record</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">13</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">record</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">19</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">nextR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">==</span> <span class="mi">30</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">nextC</span> <span class="o">==</span> <span class="mi">15</span><span class="p">){</span> <span class="c1">//******************* 30이 여러 군데 있음!!!!</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="n">nextR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">){</span>
+                    <span class="k">continue</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">10</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">record</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">14</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">record</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">20</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+                    <span class="k">continue</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">nextR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">==</span> <span class="mi">35</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">11</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">record</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">15</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">record</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">21</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">nextR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">==</span> <span class="mi">40</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">20</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">record</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">12</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">record</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">16</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">record</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">22</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">nextR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">record</span><span class="p">[</span><span class="n">nextR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">){</span> <span class="c1">//말이 도착 칸을 넘어서지 않았는데 이미 말이 있을 경우</span>
+            <span class="c1">// h[i].r = origR; //*********** 원상복귀해줘야 함!!!</span>
+            <span class="c1">// h[i].c = origC;</span>
+            <span class="k">continue</span><span class="p">;</span> <span class="c1">//말을 이동할 수 없음</span>
+        <span class="p">}</span>
+        
+        <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span> <span class="o">=</span> <span class="n">nextR</span><span class="p">;</span>
+        <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c</span> <span class="o">=</span> <span class="n">nextC</span><span class="p">;</span>
+        <span class="n">record</span><span class="p">[</span><span class="n">origR</span><span class="p">][</span><span class="n">origC</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">//*÷****************</span>
+        <span class="n">record</span><span class="p">[</span><span class="n">nextR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="n">DFS</span><span class="p">(</span><span class="n">turn</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">score</span> <span class="o">+</span> <span class="n">board</span><span class="p">[</span><span class="n">nextR</span><span class="p">][</span><span class="n">nextC</span><span class="p">],</span> <span class="n">route</span><span class="o">+</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+        <span class="c1">//원상복귀 -&gt; 다음 말 돌 수 있음</span>
+        <span class="n">record</span><span class="p">[</span><span class="n">origR</span><span class="p">][</span><span class="n">origC</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="c1">//******** 원래 자리에 다시 표시</span>
+        <span class="n">record</span><span class="p">[</span><span class="n">nextR</span><span class="p">][</span><span class="n">nextC</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">//*******</span>
+        <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span> <span class="o">=</span> <span class="n">origR</span><span class="p">;</span>
+        <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c</span> <span class="o">=</span> <span class="n">origC</span><span class="p">;</span>
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">record</span><span class="p">));</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">dice</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//기본 루트</span>
+        <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//******</span>
+    <span class="p">}</span>
+
+    <span class="n">DFS</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="11-이전-풀이와-달라진-점개선">11. 이전 풀이와 달라진 점(개선)</h4>
+
+<p>이전 풀이 없음.</p>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Eunkyung99/gang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/gang/simulation/bruteforce/baekjoon/2022/04/06/algorithm35.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eunkyung99" target="_blank" title="Eunkyung99"><svg class="svg-icon grey"><use xlink:href="/gang/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
